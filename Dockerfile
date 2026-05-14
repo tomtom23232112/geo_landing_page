@@ -4,5 +4,6 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 COPY api/ ./api/
 COPY server.js ./
-EXPOSE 3001
+COPY docs/ ./docs/
+EXPOSE 3000
 CMD ["node", "server.js"]
