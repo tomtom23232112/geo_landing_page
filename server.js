@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.post('/api/create-checkout', handler);
 
+app.get('/', (_req, res) => res.json({ status: 'Everadam API running' }));
 app.get('/health', (_req, res) => res.json({ ok: true }));
 
 const port = process.env.PORT || 3000;
