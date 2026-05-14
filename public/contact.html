@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contact — Everadam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..600,30..100&family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#fafaf7;--ink:#1a1a1a;--ink-2:#3a3a38;--ink-3:#6b6b66;--rule:rgba(26,26,26,0.12);--rule-strong:rgba(26,26,26,0.28);--accent:#c84e22;--card:#fff;--serif:"Fraunces","Iowan Old Style","Hoefler Text",Georgia,serif;--sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif;--mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;}
+*{box-sizing:border-box;}html,body{margin:0;padding:0;}body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.5;}::selection{background:var(--accent);color:var(--bg);}
+.c-shell{max-width:1080px;margin:0 auto;padding:0 32px;}
+@media(max-width:600px){.c-shell{padding:0 20px;}}
+.c-nav{padding:28px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);}
+.c-nav .logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:18px;text-decoration:none;color:var(--ink);}
+.c-nav .logo img{width:24px;height:24px;object-fit:contain;}
+.c-nav a.back{color:var(--ink-2);text-decoration:none;font-size:13px;}
+.c-nav a.back:hover{color:var(--accent);}
+.c-hero{padding:96px 0 48px;max-width:760px;}
+.c-meta{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-3);}
+.c-meta .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);vertical-align:1px;margin-right:8px;}
+.c-hero h1{font-family:var(--serif);font-variation-settings:"opsz" 144,"SOFT" 30;font-weight:320;font-size:80px;line-height:1.04;letter-spacing:-0.02em;margin:18px 0 18px;}
+.c-hero h1 em{font-style:italic;color:var(--accent);}
+.c-hero p.lede{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--ink-2);max-width:56ch;margin:0;font-weight:360;}
+.c-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;padding:48px 0 100px;align-items:start;}
+@media(max-width:920px){.c-grid{grid-template-columns:1fr;gap:48px;}}
+.c-form .group{margin-bottom:26px;}
+.c-form label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;}
+.c-form input,.c-form textarea,.c-form select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--rule-strong);padding:8px 0 12px;font-family:var(--sans);font-size:16px;color:var(--ink);outline:none;transition:border-color 200ms ease;}
+.c-form input:focus,.c-form textarea:focus,.c-form select:focus{border-bottom-color:var(--accent);}
+.c-form textarea{min-height:130px;resize:vertical;line-height:1.5;}
+.c-form .row-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+@media(max-width:600px){.c-form .row-2{grid-template-columns:1fr;}}
+.c-submit{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);cursor:pointer;font-family:var(--sans);font-size:15px;letter-spacing:0.02em;transition:background 240ms ease,transform 200ms ease;}
+.c-submit:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px);}
+.c-fineprint{font-size:12.5px;color:var(--ink-3);margin-top:14px;line-height:1.5;}
+.c-side .block{padding:24px 0;border-top:1px solid var(--rule);}
+.c-side .block:last-child{border-bottom:1px solid var(--rule);}
+.c-side h3{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px;font-weight:500;}
+.c-side p{font-family:var(--serif);font-size:18px;color:var(--ink);margin:0 0 4px;font-weight:380;}
+.c-side a{color:var(--accent);text-decoration:none;}
+.c-side a:hover{text-decoration:underline;text-underline-offset:3px;}
+.c-side .small{font-size:13.5px;color:var(--ink-2);font-family:var(--sans);line-height:1.5;max-width:38ch;}
+.c-success{padding:28px;background:var(--card);border:1px solid var(--rule);}
+.c-success h2{font-family:var(--serif);font-size:30px;margin:8px 0 8px;font-weight:380;}
+.site-footer{border-top:1px solid var(--rule);padding:28px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--ink-2);align-items:center;}
+.site-footer .brand{display:flex;gap:12px;align-items:center;}
+.site-footer .brand img{width:18px;height:18px;object-fit:contain;}
+.site-footer .brand .name{font-family:var(--serif);font-size:15px;color:var(--ink);}
+.site-footer .brand .sep{color:var(--ink-3);}
+.site-footer .links{display:flex;gap:24px;}
+.site-footer .links a{color:var(--ink-3);text-decoration:none;}
+.site-footer .links a:hover{color:var(--accent);}
+.site-footer .copyright{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);}
+</style>
+</head>
+<body>
+<div class="c-shell">
+  <header class="c-nav">
+    <a href="/" class="logo">
+      <img src="/assets/logo.png" alt=""/>
+      <span>Everadam</span>
+    </a>
+    <a href="/" class="back">← Back to home</a>
+  </header>
+
+  <section class="c-hero">
+    <div class="c-meta"><span class="dot"></span>We reply within one business day</div>
+    <h1>Get in <em>touch</em>.</h1>
+    <p class="lede">Question about your report, your subscription, or whether GEO is right for your business? Drop us a note. A real person reads every message.</p>
+  </section>
+
+  <section class="c-grid">
+    <div class="c-form" id="form-wrap">
+      <form id="contact-form" onsubmit="return submitContact(event)">
+        <div class="row-2">
+          <div class="group">
+            <label for="cf-name">Full name</label>
+            <input id="cf-name" type="text" required placeholder="First and last"/>
+          </div>
+          <div class="group">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" type="email" required placeholder="you@yourcompany.com"/>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="group">
+            <label for="cf-phone">Phone (optional)</label>
+            <input id="cf-phone" type="tel" placeholder="(555) 123-4567"/>
+          </div>
+          <div class="group">
+            <label for="cf-topic">Topic</label>
+            <select id="cf-topic" required>
+              <option value="" disabled selected>Choose one</option>
+              <option>Question about my report</option>
+              <option>Billing &amp; subscription</option>
+              <option>Help getting started</option>
+              <option>Partnership / agency</option>
+              <option>Press</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="group">
+          <label for="cf-domain">Your website (optional)</label>
+          <input id="cf-domain" type="text" placeholder="yourcompany.com"/>
+        </div>
+        <div class="group">
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" required placeholder="Tell us a bit about what you need…"></textarea>
+        </div>
+        <button class="c-submit" type="submit">
+          Send message
+          <span aria-hidden="true">→</span>
+        </button>
+        <p class="c-fineprint">By sending, you agree to our <a href="/privacy.html" style="color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a>. We use your details only to reply to you.</p>
+      </form>
+
+      <div class="c-success" id="contact-success" style="display:none;">
+        <div class="c-meta"><span class="dot"></span>Message sent</div>
+        <h2>Thanks — we got it.</h2>
+        <p style="font-size:15px;color:var(--ink-2);margin:0;max-width:48ch;line-height:1.55;">A real person will reply within one business day to the email you provided. Meanwhile, you can keep exploring the report on the <a href="/">main page</a>.</p>
+      </div>
+    </div>
+
+    <aside class="c-side">
+      <div class="block">
+        <h3>Email</h3>
+        <p><a href="mailto:hello@everadam.com">hello@everadam.com</a></p>
+        <div class="small">Best for general questions, partnerships, and press.</div>
+      </div>
+      <div class="block">
+        <h3>Support &amp; billing</h3>
+        <p><a href="mailto:support@everadam.com">support@everadam.com</a></p>
+        <div class="small">Existing customers — include your billing email so we can find your account quickly.</div>
+      </div>
+      <div class="block">
+        <h3>Mailing address</h3>
+        <p>Everadam LLC</p>
+        <div class="small">30 N Gould St, Ste R<br/>Sheridan, WY 82801<br/>United States</div>
+      </div>
+      <div class="block">
+        <h3>Response time</h3>
+        <p>~ 1 business day</p>
+        <div class="small">Mon–Fri, 9:00–18:00 ET. Weekend messages get answered on Monday.</div>
+      </div>
+    </aside>
+  </section>
+
+  <footer class="site-footer">
+    <div class="brand">
+      <img src="/assets/logo.png" alt="Everadam"/>
+      <span class="name">Everadam LLC</span>
+      <span class="sep">·</span>
+      <span>Wyoming, USA</span>
+    </div>
+    <div class="links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="copyright">© 2026 Everadam LLC.</div>
+  </footer>
+</div>
+
+<script>
+function submitContact(e) {
+  e.preventDefault();
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('contact-success').style.display = 'block';
+  document.getElementById('contact-success').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  return false;
+}
+</script>
+</body>
+</html>
