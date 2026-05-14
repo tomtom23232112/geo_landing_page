@@ -14,7 +14,7 @@ app.post('/api/create-checkout', handler);
 
 app.use(express.static(path.join(__dirname, 'docs')));
 
-app.get('*', (_req, res) => {
+app.use((_req, res) => {
   res.sendFile(path.join(__dirname, 'docs', 'index.html'));
 });
 
