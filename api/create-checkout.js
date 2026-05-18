@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
 
-// TODO: Replace with your $50 one-time price ID from Stripe Dashboard
-const PRICE_REPORT = 'price_REPLACE_WITH_YOUR_50_PRICE_ID'; // $50 one-time report
+// TODO: Replace with your $20 one-time price ID from Stripe Dashboard
+const PRICE_REPORT = 'price_REPLACE_WITH_YOUR_50_PRICE_ID'; // $20 one-time report
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

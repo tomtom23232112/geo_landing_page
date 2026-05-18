@@ -78,7 +78,7 @@ export default function Survey({ initialDomain, initialEmail, onComplete, onClos
           <div style={{ height: 24 }}/>
           <FieldInput label="Main service or product" value={data.service} error={errors.service} placeholder="e.g., Warehouse automation for mid-market 3PLs" onChange={v => set('service', v)}/>
           <div style={{ height: 24 }}/>
-          <FieldInput label="Target market" value={data.market} error={errors.market} placeholder="e.g., US logistics ops leaders, $50M–$500M revenue" onChange={v => set('market', v)}/>
+          <FieldInput label="Target market" value={data.market} error={errors.market} placeholder="e.g., US logistics ops leaders, $20M–$200M revenue" onChange={v => set('market', v)}/>
         </SurveyStep>
       )}
 

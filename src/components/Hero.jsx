@@ -32,7 +32,7 @@ export default function Hero({ tweaks, onStart }) {
       position: 'relative', overflow: 'hidden',
     }}>
       <div className="shell">
-        <Eyebrow>AI Appearance Report · $50 · For US companies</Eyebrow>
+        <Eyebrow>AI Appearance Report · $20 · For US companies</Eyebrow>
 
         <div className="hero-grid" style={{
           display: 'grid',
@@ -50,7 +50,7 @@ export default function Hero({ tweaks, onStart }) {
               style={{ fontSize: tweaks.density === 'compact' ? 76 : 92, margin: '0 0 24px', maxWidth: '14ch' }}
             />
             <p className="lede" style={{ fontSize: tweaks.density === 'compact' ? 19 : 22, maxWidth: '56ch', marginBottom: 36 }}>
-              When a buyer asks ChatGPT or Claude "best [your service] in [your city]" — are you the answer? For $50, this report tells you exactly what needs to be in place for AI to recommend your business.
+              When a buyer asks ChatGPT or Claude "best [your service] in [your city]" — are you the answer? For $20, this report tells you exactly what needs to be in place for AI to recommend your business.
             </p>
 
             <div className="card" style={{ padding: 24, background: 'var(--card)' }}>
@@ -110,7 +110,7 @@ export default function Hero({ tweaks, onStart }) {
 
             {tweaks.showPricingHint && (
               <div className="mono" style={{ marginTop: 24, fontSize: 11.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
-                One-time report · $50 · delivered within 48h · no subscription
+                One-time report · $20 · delivered within 48h · no subscription
               </div>
             )}
           </div>

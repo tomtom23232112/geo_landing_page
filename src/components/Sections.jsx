@@ -17,7 +17,7 @@ export function ProblemSection() {
               When your potential clients ask ChatGPT, Claude, or Perplexity for a recommendation — those tools pick specific businesses to mention. The decision happens in seconds, based on signals your website either has or doesn't.
             </p>
             <p className="body" style={{ fontSize: 17, marginTop: 18, maxWidth: '58ch' }}>
-              The $50 report shows you exactly what those signals are, which ones you're missing, and what to do to become the business AI recommends in your category.
+              The $20 report shows you exactly what those signals are, which ones you're missing, and what to do to become the business AI recommends in your category.
             </p>
           </div>
         </Reveal>
@@ -39,7 +39,7 @@ export function WhatsCheckedSection({ onCta }) {
     <section className="section" id="what" style={{ background: '#f3f1eb' }}>
       <div className="shell">
         <div className="row row-2" style={{ gridTemplateColumns: '1fr 1.5fr', gap: 80, alignItems: 'start', marginBottom: 48 }}>
-          <Eyebrow>Your $50 report</Eyebrow>
+          <Eyebrow>Your $20 report</Eyebrow>
           <div>
             <h2 className="display" style={{ fontSize: 56, margin: '0 0 18px' }}>
               What the report <em>teaches you</em>
@@ -84,7 +84,7 @@ export function SolutionSection({ onCta }) {
               Learn what it takes. <em>Then let us do it.</em>
             </h2>
             <p className="lede" style={{ fontSize: 19, maxWidth: '58ch', marginBottom: 14 }}>
-              The $50 report gives you the full playbook for getting recommended by ChatGPT and Claude. You can act on it yourself — or let Everadam implement it for you.
+              The $20 report gives you the full playbook for getting recommended by ChatGPT and Claude. You can act on it yourself — or let Everadam implement it for you.
             </p>
             <p className="body" style={{ fontSize: 16.5, maxWidth: '58ch', marginBottom: 32 }}>
               After the report, Everadam can set up your AI-appearance foundation and run automated monthly optimization — no meetings, no agency onboarding, no long-term contracts.
@@ -200,7 +200,7 @@ function SocialProof() {
           ● Why Everadam exists
         </div>
         <div style={{ fontFamily: 'var(--serif)', fontVariationSettings: '"opsz" 96', fontSize: 26, fontWeight: 320, lineHeight: 1.4, letterSpacing: '-0.01em', color: '#e8e3d6', maxWidth: '72ch' }}>
-          "We built Everadam because most GEO advice is either too vague to act on, or costs $2,000/month before you've seen a single result. A $50 report that shows exactly where you're invisible — and what to fix — felt like the honest starting point."
+          "We built Everadam because most GEO advice is either too vague to act on, or costs $2,000/month before you've seen a single result. A $20 report that shows exactly where you're invisible — and what to fix — felt like the honest starting point."
         </div>
         <div className="mono" style={{ fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6a6560', marginTop: 18 }}>
           — Everadam · Currently accepting first clients
@@ -212,7 +212,7 @@ function SocialProof() {
 
 export function TrustSection() {
   const cards = [
-    { t: 'Actionable $50 report',  d: 'A full AI-search audit with a prioritized fix list — not a generic checklist.' },
+    { t: 'Actionable $20 report',  d: 'A full AI-search audit with a prioritized fix list — not a generic checklist.' },
     { t: 'Automated workflow',     d: 'A structured workflow handles the GEO process — no meeting required.' },
     { t: 'Monthly updates',        d: 'Ongoing updates instead of one-time static reports.' },
     { t: 'US-based operation',     d: 'Serving US and international companies with a clear, performance-oriented approach.' },
@@ -247,11 +247,11 @@ export function TrustSection() {
 export function FAQSection() {
   const faqs = [
     { q: 'What exactly is in the report?',              a: 'A practical playbook for getting your business recommended by ChatGPT, Claude, and similar AI tools. It covers what AI systems look for when recommending businesses in your category, what your competitors do that makes AI mention them, and a prioritized action list for your website.' },
-    { q: 'Why $50 and not free?',                      a: 'A real report takes real work. At $50 you get a thorough, specific analysis — not a generic checklist. It covers your exact situation, your competitors, and what to change first to start appearing in AI answers.' },
+    { q: 'Why $20 and not free?',                      a: 'A real report takes real work. At $20 you get a thorough, specific analysis — not a generic checklist. It covers your exact situation, your competitors, and what to change first to start appearing in AI answers.' },
     { q: 'What happens after I receive the report?',   a: 'You get a plain-English playbook you can act on yourself immediately. No upsell call, no pressure. If you want Everadam to implement everything for you, that option exists — but the report is fully actionable on its own.' },
     { q: 'Do I need to book a meeting?',               a: 'No. The funnel is designed to work without a customer meeting. You submit your website, receive the report, and can activate setup online.' },
     { q: 'What does the paid GEO setup include?',      a: 'Automated GEO setup, AI-search readiness review, first optimization actions, structured data recommendations, content improvement actions, and monthly visibility updates.' },
-    { q: 'How much does the report cost?',              a: 'The GEO Visibility Report is $50 — one-time, no subscription. You receive the full report within 48 hours after payment.' },
+    { q: 'How much does the report cost?',              a: 'The GEO Visibility Report is $20 — one-time, no subscription. You receive the full report within 48 hours after payment.' },
     { q: 'Can you guarantee AI mentions or rankings?', a: 'No. No provider can honestly guarantee AI mentions, rankings, or revenue outcomes. Everadam focuses on structured, consistent optimization designed to improve your AI-search visibility foundation.' },
     { q: 'Is this suitable for US companies?',         a: 'Yes. Everadam is a US-based operation and the service is designed for US and international B2B companies.' },
   ];

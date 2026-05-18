@@ -51,7 +51,7 @@ export default function ReportPreview({ data, onActivate }) {
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
           <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.18em', color: 'var(--accent)', textTransform: 'uppercase' }}>● Session reserved</span>
           <span style={{ fontSize: 13.5, color: '#e8e3d6' }}>
-            Your scan data is cached. Get the full report for <strong style={{ color: '#fff' }}>$50</strong> — includes exactly what ChatGPT looks for in your niche and your 30-day action plan.
+            Your scan data is cached. Get the full report for <strong style={{ color: '#fff' }}>$20</strong> — includes exactly what ChatGPT looks for in your niche and your 30-day action plan.
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -64,7 +64,7 @@ export default function ReportPreview({ data, onActivate }) {
         Here's what AI sees on <em>{dom}</em>
       </h3>
       <div className="body" style={{ fontSize: 14, color: 'var(--ink-3)', maxWidth: '58ch', marginBottom: 28 }}>
-        This is a preview. The full $50 report — with plain-English explanations, your complete fix list, and what to do first — will be delivered to <span style={{ color: 'var(--ink)' }}>{data.email || 'you'}</span> within 48 hours.
+        This is a preview. The full $20 report — with plain-English explanations, your complete fix list, and what to do first — will be delivered to <span style={{ color: 'var(--ink)' }}>{data.email || 'you'}</span> within 48 hours.
       </div>
 
       {/* Score + benchmark */}
@@ -151,13 +151,13 @@ export default function ReportPreview({ data, onActivate }) {
       <div style={{ marginTop: 48, padding: '36px 32px', background: 'var(--card)', border: '1px solid var(--rule)' }}>
         <div style={{ textAlign: 'center', maxWidth: 540, margin: '0 auto' }}>
           <Eyebrow>Get the full report</Eyebrow>
-          <h4 className="display" style={{ fontSize: 30, marginTop: 10, marginBottom: 10 }}>Your AI appearance playbook — $50.</h4>
+          <h4 className="display" style={{ fontSize: 30, marginTop: 10, marginBottom: 10 }}>Your AI appearance playbook — $20.</h4>
           <div className="body" style={{ fontSize: 14.5, color: 'var(--ink-2)', marginBottom: 20 }}>
             What ChatGPT looks for in your niche, why competitors get mentioned, and your step-by-step action plan. Delivered within 48 hours.
           </div>
 
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 10, marginBottom: 4 }}>
-            <span className="price-display" style={{ fontSize: 56 }}>$50</span>
+            <span className="price-display" style={{ fontSize: 56 }}>$20</span>
             <span className="mono" style={{ fontSize: 11, letterSpacing: '0.12em', color: 'var(--ink-3)', textTransform: 'uppercase' }}>one-time</span>
           </div>
           <div className="mono" style={{ fontSize: 11, letterSpacing: '0.14em', color: 'var(--ink-3)', textTransform: 'uppercase', marginBottom: 24 }}>
