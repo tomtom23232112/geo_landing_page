@@ -132,7 +132,7 @@ export default function HeroPreview({ domain, accent = '#c84e22' }) {
                   <div style={{ fontSize: 13, color: 'var(--ink-2)', lineHeight: 1.45 }}>{f.note}</div>
                 </div>
                 <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.1em', color: 'var(--ink-3)' }}>
-                  Fix in setup
+                  Fix available
                 </span>
               </div>
             ))}
@@ -145,7 +145,7 @@ export default function HeroPreview({ domain, accent = '#c84e22' }) {
         padding: '14px 22px', borderTop: '1px solid var(--rule)', background: 'var(--bg)',
       }}>
         <div className="mono" style={{ fontSize: 10.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
-          Free · Delivered to your inbox
+          $50 · Delivered within 48h
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 11.5, color: 'var(--ink-2)' }}>
           <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#3d6b4a', animation: 'pulse 1.6s ease-in-out infinite' }}/>

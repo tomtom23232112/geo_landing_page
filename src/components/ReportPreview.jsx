@@ -55,11 +55,7 @@ export default function ReportPreview({ data, onActivate }) {
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.18em', color: '#8a857a', textTransform: 'uppercase' }}>Expires in</span>
-          <span className="mono" style={{
-            fontSize: 18, letterSpacing: '0.06em', color: countdown.left < 180 ? 'var(--accent)' : '#fff',
-            padding: '4px 10px', border: '1px solid rgba(255,255,255,0.18)', fontVariantNumeric: 'tabular-nums',
-          }}>{countdown.label}</span>
+          <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.18em', color: '#8a857a', textTransform: 'uppercase' }}>Valid for this session</span>
         </div>
       </div>
 
@@ -165,7 +161,7 @@ export default function ReportPreview({ data, onActivate }) {
             <span className="mono" style={{ fontSize: 11, letterSpacing: '0.12em', color: 'var(--ink-3)', textTransform: 'uppercase' }}>one-time</span>
           </div>
           <div className="mono" style={{ fontSize: 11, letterSpacing: '0.14em', color: 'var(--ink-3)', textTransform: 'uppercase', marginBottom: 24 }}>
-            No subscription · no meeting · session expires in {countdown.label}
+            No subscription · no meeting · delivered within 48 hours
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 12 }}>

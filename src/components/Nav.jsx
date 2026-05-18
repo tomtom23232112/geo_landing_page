@@ -17,7 +17,7 @@ export default function Nav({ onCtaClick }) {
             style={{ height: 38, padding: '0 16px', fontSize: 13 }}
             onClick={onCtaClick}
           >
-            Free GEO Report <Arrow size={12}/>
+            Get My Report <Arrow size={12}/>
           </button>
         </nav>
       </div>

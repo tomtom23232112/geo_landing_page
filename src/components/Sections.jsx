@@ -17,7 +17,7 @@ export function ProblemSection() {
               Your potential customers no longer rely on traditional search results alone. They ask AI assistants, compare vendors through generated summaries, and use answer engines to make faster decisions.
             </p>
             <p className="body" style={{ fontSize: 17, marginTop: 18, maxWidth: '58ch' }}>
-              If your website, content, and brand signals are unclear, AI systems may struggle to understand what your company does, who you serve, and when you are relevant. The free GEO report shows where your website may need stronger signals.
+              If your website, content, and brand signals are unclear, AI systems may struggle to understand what your company does, who you serve, and when you are relevant. The $50 GEO report shows exactly where your website needs stronger signals — and what to fix first.
             </p>
           </div>
         </Reveal>
@@ -39,10 +39,10 @@ export function WhatsCheckedSection({ onCta }) {
     <section className="section" id="what" style={{ background: '#f3f1eb' }}>
       <div className="shell">
         <div className="row row-2" style={{ gridTemplateColumns: '1fr 1.5fr', gap: 80, alignItems: 'start', marginBottom: 48 }}>
-          <Eyebrow>Your free report</Eyebrow>
+          <Eyebrow>Your $50 report</Eyebrow>
           <div>
             <h2 className="display" style={{ fontSize: 56, margin: '0 0 18px' }}>
-              What your free GEO Visibility Report <em>checks</em>
+              What your GEO Visibility Report <em>checks</em>
             </h2>
             <p className="lede" style={{ fontSize: 19, maxWidth: '58ch' }}>
               Everadam reviews your website from an AI-search visibility perspective and identifies the most important areas that may affect how clearly your company is understood by AI-driven systems.
@@ -81,10 +81,10 @@ export function SolutionSection({ onCta }) {
           <Eyebrow>The Everadam system</Eyebrow>
           <div>
             <h2 className="display" style={{ fontSize: 56, margin: '0 0 24px' }}>
-              From free GEO report to <em>automated setup</em>.
+              From $50 GEO report to <em>automated setup</em>.
             </h2>
             <p className="lede" style={{ fontSize: 19, maxWidth: '58ch', marginBottom: 14 }}>
-              The free report helps you understand where your website may be weak for AI-driven discovery.
+              The report shows exactly where your website is weak for AI-driven discovery — then Everadam can fix it.
             </p>
             <p className="body" style={{ fontSize: 16.5, maxWidth: '58ch', marginBottom: 32 }}>
               After the report, Everadam can set up your GEO foundation and run automated monthly optimization — without customer meetings, sales calls, or manual agency onboarding.
@@ -175,72 +175,36 @@ export function BenefitsSection() {
 }
 
 function SocialProof() {
-  const logos = [
-    { name: 'Halberstadt & Co.', kind: 'serif' },
-    { name: 'NORTHGRID',         kind: 'sans-bold' },
-    { name: 'Verbatim',          kind: 'serif-italic' },
-    { name: 'Atlas Field',       kind: 'sans-thin' },
-    { name: 'Crescent / Bennet', kind: 'serif-small' },
-    { name: 'Lumen Industries',  kind: 'mono' },
-  ];
-  const renderLogo = (l) => {
-    const base = { color: 'var(--ink)', opacity: 0.78, letterSpacing: '-0.005em' };
-    if (l.kind === 'serif')        return <span style={{ ...base, fontFamily: 'var(--serif)', fontWeight: 420, fontSize: 22, fontVariationSettings: '"opsz" 36' }}>{l.name}</span>;
-    if (l.kind === 'serif-italic') return <span style={{ ...base, fontFamily: 'var(--serif)', fontStyle: 'italic', fontWeight: 380, fontSize: 24 }}>{l.name}</span>;
-    if (l.kind === 'serif-small')  return <span style={{ ...base, fontFamily: 'var(--serif)', fontWeight: 420, fontSize: 18, letterSpacing: '0.04em', textTransform: 'uppercase' }}>{l.name}</span>;
-    if (l.kind === 'sans-bold')    return <span style={{ ...base, fontFamily: 'var(--sans)', fontWeight: 700, fontSize: 17, letterSpacing: '0.18em' }}>{l.name}</span>;
-    if (l.kind === 'sans-thin')    return <span style={{ ...base, fontFamily: 'var(--sans)', fontWeight: 300, fontSize: 20, letterSpacing: '0.02em' }}>{l.name}</span>;
-    if (l.kind === 'mono')         return <span style={{ ...base, fontFamily: 'var(--mono)', fontWeight: 500, fontSize: 14, letterSpacing: '0.16em', textTransform: 'uppercase' }}>{l.name}</span>;
-    return <span>{l.name}</span>;
-  };
-
   return (
     <div style={{ margin: '8px 0 56px' }}>
-      <div style={{ textAlign: 'center', marginBottom: 28 }}>
-        <span className="mono" style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
-          ● Selected for the Everadam private beta
-        </span>
-      </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 0, borderTop: '1px solid var(--rule)', borderBottom: '1px solid var(--rule)' }}>
-        {logos.map((l, i) => (
-          <div key={l.name} style={{
-            padding: '30px 18px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            borderRight: i < logos.length - 1 ? '1px solid var(--rule)' : '0', minHeight: 88,
-          }}>
-            {renderLogo(l)}
-          </div>
-        ))}
-      </div>
-      <style>{`@media (max-width: 900px){ .sp-logos{grid-template-columns: repeat(3, 1fr) !important;} }`}</style>
-
-      <div style={{ marginTop: 56, maxWidth: 820, marginLeft: 'auto', marginRight: 'auto', textAlign: 'center', padding: '0 24px' }}>
-        <div style={{ fontFamily: 'var(--serif)', fontVariationSettings: '"opsz" 96, "SOFT" 30', fontSize: 30, fontWeight: 320, lineHeight: 1.35, letterSpacing: '-0.01em', color: 'var(--ink)' }}>
-          "We went from invisible in ChatGPT and Perplexity to being cited in the first answer for our category — within four weeks of activating Everadam. The setup took us about ten minutes."
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 14, marginTop: 24 }}>
-          <div style={{ width: 42, height: 42, borderRadius: '50%', background: 'linear-gradient(135deg, #c84e22 0%, #a39369 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: 'var(--serif)', fontSize: 16, fontWeight: 500 }}>
-            MH
-          </div>
-          <div style={{ textAlign: 'left' }}>
-            <div style={{ fontFamily: 'var(--serif)', fontSize: 15, fontWeight: 440 }}>Marcus Halberstadt</div>
-            <div className="mono" style={{ fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
-              Founder · Halberstadt &amp; Co.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, borderTop: '1px solid var(--rule)' }}>
+      <div style={{
+        padding: '36px 40px', border: '1px solid var(--rule)', background: 'var(--card)',
+        display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0,
+      }}>
         {[
-          { n: '142',    l: 'Domains analyzed in beta' },
-          { n: '+38pts', l: 'Avg. readiness lift, first 30 days' },
-          { n: '4.9 / 5', l: 'Beta-tester satisfaction (n=27)' },
-        ].map((s, i) => (
-          <div key={s.l} style={{ padding: '28px 24px', textAlign: 'center', borderRight: i < 2 ? '1px solid var(--rule)' : '0' }}>
-            <div className="price-display" style={{ fontSize: 38, marginBottom: 6, color: 'var(--ink)' }}>{s.n}</div>
-            <div className="mono" style={{ fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>{s.l}</div>
+          { icon: '↗', t: 'AI search is growing fast', d: '40% of US adults already use AI assistants for product and service research. That number is doubling year over year.' },
+          { icon: '⊘', t: 'Most websites are invisible to AI', d: 'The majority of business websites lack the structured signals AI systems need to understand, categorize, and recommend them.' },
+          { icon: '◎', t: 'Early movers win the category', d: 'Companies that establish AI-search visibility now will be the default recommendation as AI-assisted search becomes the norm.' },
+        ].map((c, i) => (
+          <div key={c.t} style={{ padding: '28px 28px 32px', borderRight: i < 2 ? '1px solid var(--rule)' : '0' }}>
+            <div className="mono" style={{ fontSize: 20, color: 'var(--accent)', marginBottom: 14 }}>{c.icon}</div>
+            <h4 style={{ fontFamily: 'var(--serif)', fontSize: 19, fontWeight: 380, margin: '0 0 10px', fontVariationSettings: '"opsz" 24' }}>{c.t}</h4>
+            <p className="body" style={{ fontSize: 13.5, margin: 0, color: 'var(--ink-2)', lineHeight: 1.6 }}>{c.d}</p>
           </div>
         ))}
+      </div>
+      <style>{`@media (max-width: 900px){ .sp-context > div { grid-template-columns: 1fr !important; } }`}</style>
+
+      <div style={{ marginTop: 48, padding: '32px 40px', background: '#0e0d0b', borderLeft: '3px solid var(--accent)' }}>
+        <div className="mono" style={{ fontSize: 10.5, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#6a6560', marginBottom: 16 }}>
+          ● Why Everadam exists
+        </div>
+        <div style={{ fontFamily: 'var(--serif)', fontVariationSettings: '"opsz" 96', fontSize: 26, fontWeight: 320, lineHeight: 1.4, letterSpacing: '-0.01em', color: '#e8e3d6', maxWidth: '72ch' }}>
+          "We built Everadam because most GEO advice is either too vague to act on, or costs $2,000/month before you've seen a single result. A $50 report that shows exactly where you're invisible — and what to fix — felt like the honest starting point."
+        </div>
+        <div className="mono" style={{ fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6a6560', marginTop: 18 }}>
+          — Everadam · Currently accepting first clients
+        </div>
       </div>
     </div>
   );
@@ -248,10 +212,10 @@ function SocialProof() {
 
 export function TrustSection() {
   const cards = [
-    { t: 'Useful free report',     d: 'A practical snapshot of your GEO visibility issues and opportunities.' },
+    { t: 'Actionable $50 report',  d: 'A full AI-search audit with a prioritized fix list — not a generic checklist.' },
     { t: 'Automated workflow',     d: 'A structured workflow handles the GEO process — no meeting required.' },
     { t: 'Monthly updates',        d: 'Ongoing updates instead of one-time static reports.' },
-    { t: 'Built in Wyoming, USA',  d: 'Serving US and international companies with a clear, performance-oriented approach.' },
+    { t: 'US-based operation',     d: 'Serving US and international companies with a clear, performance-oriented approach.' },
     { t: 'No unrealistic promises', d: 'No guaranteed rankings. No guaranteed AI mentions. Just structured, consistent optimization.' },
   ];
   return (
@@ -260,7 +224,7 @@ export function TrustSection() {
         <div style={{ textAlign: 'center', maxWidth: 760, margin: '0 auto 48px' }}>
           <Eyebrow>Built for low-friction execution</Eyebrow>
           <h2 className="display" style={{ fontSize: 48, margin: '14px 0 0' }}>
-            Free report first. <em>Automated setup after.</em>
+            $50 report first. <em>Automated setup after.</em>
           </h2>
         </div>
 
@@ -289,7 +253,7 @@ export function FAQSection() {
     { q: 'What does the paid GEO setup include?',      a: 'Automated GEO setup, AI-search readiness review, first optimization actions, structured data recommendations, content improvement actions, and monthly visibility updates.' },
     { q: 'How much does the report cost?',              a: 'The GEO Visibility Report is $50 — one-time, no subscription. You receive the full report within 48 hours after payment.' },
     { q: 'Can you guarantee AI mentions or rankings?', a: 'No. No provider can honestly guarantee AI mentions, rankings, or revenue outcomes. Everadam focuses on structured, consistent optimization designed to improve your AI-search visibility foundation.' },
-    { q: 'Is this suitable for US companies?',         a: 'Yes. Everadam is based in Wyoming, USA, and the service is designed for US and international B2B companies.' },
+    { q: 'Is this suitable for US companies?',         a: 'Yes. Everadam is a US-based operation and the service is designed for US and international B2B companies.' },
   ];
   const [open, setOpen] = useState(0);
 
@@ -325,7 +289,7 @@ export function FinalCTA({ onCta }) {
       <Reveal as="div" className="shell" style={{ textAlign: 'center' }}>
         <div className="eyebrow" style={{ color: '#8a857a' }}><span className="dot"/>Free GEO Visibility Report</div>
         <h2 className="display" style={{ fontSize: 88, margin: '18px auto 24px', maxWidth: '18ch', color: '#fafaf7' }}>
-          Get your free GEO <em style={{ color: '#c84e22' }}>Visibility Report</em>.
+          Stop being invisible to <em style={{ color: '#c84e22' }}>AI search</em>.
         </h2>
         <p className="lede" style={{ fontSize: 20, color: '#bdb9ad', maxWidth: '60ch', margin: '0 auto 36px' }}>
           Submit your website and see where your company may need stronger signals for AI-driven search. After your report, you can let Everadam set up and optimize GEO automatically.
