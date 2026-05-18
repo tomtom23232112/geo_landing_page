@@ -5,9 +5,9 @@ import HeroPreview from './HeroPreview';
 import { isValidUrl, isValidEmail } from '../utils';
 
 const HEADLINES = {
-  primary: { pre: 'Stop losing clients to', em: 'AI search', post: ' invisibility.' },
-  question: { pre: 'Can AI', em: 'understand', post: ' your company?' },
-  outcome: { pre: 'Your competitors show up in AI.', em: 'You don\'t.', post: '' },
+  primary: { pre: 'Get recommended by', em: 'ChatGPT', post: ' when clients search for you.' },
+  question: { pre: 'When buyers ask AI for your service,', em: 'do you come up?', post: '' },
+  outcome: { pre: 'Your competitors are in AI answers.', em: 'Here\'s how to join them.', post: '' },
 };
 
 export default function Hero({ tweaks, onStart }) {
@@ -32,7 +32,7 @@ export default function Hero({ tweaks, onStart }) {
       position: 'relative', overflow: 'hidden',
     }}>
       <div className="shell">
-        <Eyebrow>GEO Visibility Report · $50 · Wyoming, USA</Eyebrow>
+        <Eyebrow>AI Appearance Report · $50 · For US companies</Eyebrow>
 
         <div className="hero-grid" style={{
           display: 'grid',
@@ -50,7 +50,7 @@ export default function Hero({ tweaks, onStart }) {
               style={{ fontSize: tweaks.density === 'compact' ? 76 : 92, margin: '0 0 24px', maxWidth: '14ch' }}
             />
             <p className="lede" style={{ fontSize: tweaks.density === 'compact' ? 19 : 22, maxWidth: '56ch', marginBottom: 36 }}>
-              Every week without AI visibility costs you clients your competitors are winning. For $50, Everadam delivers a full GEO report — exactly where you're invisible to ChatGPT and Claude, and what to fix first.
+              When a buyer asks ChatGPT or Claude "best [your service] in [your city]" — are you the answer? For $50, this report tells you exactly what needs to be in place for AI to recommend your business.
             </p>
 
             <div className="card" style={{ padding: 24, background: 'var(--card)' }}>
@@ -89,16 +89,16 @@ export default function Hero({ tweaks, onStart }) {
                   No meeting required. Takes less than 2 minutes.
                 </div>
                 <button className="btn accent" onClick={submit} style={{ background: accent, borderColor: accent }}>
-                  Show Me Where I'm Invisible <Arrow/>
+                  Show Me How to Get Mentioned <Arrow/>
                 </button>
               </div>
             </div>
 
             <ul style={{ listStyle: 'none', padding: 0, margin: '32px 0 0', display: 'grid', gap: 10, fontSize: 14.5, color: 'var(--ink-2)' }}>
               {[
-                'See exactly where ChatGPT & Claude ignore your business',
-                'Know which competitors are winning AI mentions — and why',
-                'Get a prioritized fix list, not a generic checklist',
+                'Exactly what ChatGPT & Claude look for to recommend a business like yours',
+                'What your competitors do that makes AI mention them — not you',
+                'A plain-English action list: what to change and in what order',
                 'Delivered within 48 hours — no meeting, no fluff',
               ].map(t => (
                 <li key={t} style={{ display: 'flex', gap: 12, alignItems: 'baseline' }}>

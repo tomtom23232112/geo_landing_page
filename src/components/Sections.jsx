@@ -11,13 +11,13 @@ export function ProblemSection() {
           </div>
           <div>
             <h2 className="display" style={{ fontSize: 56, margin: '0 0 32px' }}>
-              Buyers are asking AI. <em>But can AI understand your company?</em>
+              AI is recommending businesses right now. <em>Probably not yours.</em>
             </h2>
             <p className="lede dropcap" style={{ fontSize: 20, maxWidth: '58ch' }}>
-              Your potential customers no longer rely on traditional search results alone. They ask AI assistants, compare vendors through generated summaries, and use answer engines to make faster decisions.
+              When your potential clients ask ChatGPT, Claude, or Perplexity for a recommendation — those tools pick specific businesses to mention. The decision happens in seconds, based on signals your website either has or doesn't.
             </p>
             <p className="body" style={{ fontSize: 17, marginTop: 18, maxWidth: '58ch' }}>
-              If your website, content, and brand signals are unclear, AI systems may struggle to understand what your company does, who you serve, and when you are relevant. The $50 GEO report shows exactly where your website needs stronger signals — and what to fix first.
+              The $50 report shows you exactly what those signals are, which ones you're missing, and what to do to become the business AI recommends in your category.
             </p>
           </div>
         </Reveal>
@@ -28,12 +28,12 @@ export function ProblemSection() {
 
 export function WhatsCheckedSection({ onCta }) {
   const items = [
-    { n: '01', t: 'GEO Readiness Snapshot',        d: 'A quick overview of how prepared your website appears for AI-driven discovery.' },
-    { n: '02', t: 'Entity Clarity Review',          d: 'Checks whether your company, offer, audience, location, and category are easy to understand.' },
-    { n: '03', t: 'Content Gap Indicators',         d: 'Identifies missing or unclear content that may limit how AI systems understand your expertise.' },
-    { n: '04', t: 'Structured Signal Opportunities',d: 'Highlights schema, metadata, and structured data opportunities.' },
-    { n: '05', t: 'AI-Search Visibility Issues',    d: 'Surfaces areas where your website may be weak, unclear, or under-optimized for generative discovery.' },
-    { n: '06', t: 'Priority Next Steps',            d: 'Shows what should be improved first if you want stronger GEO foundations.' },
+    { n: '01', t: 'What AI looks for in your niche',       d: 'The exact signals ChatGPT and Claude use to decide which businesses to recommend when someone asks for your service.' },
+    { n: '02', t: 'Why your competitors get mentioned',    d: 'A direct comparison: what the businesses AI recommends in your category are doing that you currently aren\'t.' },
+    { n: '03', t: 'What your website needs to say',        d: 'The specific content structure, page types, and language patterns that make AI systems understand and cite your business.' },
+    { n: '04', t: 'Structured data that gets you cited',   d: 'Exact schema markup recommendations — the technical signals that tell AI tools who you are and what you offer.' },
+    { n: '05', t: 'Your readiness score vs. the category', d: 'A clear benchmark: how prepared your website is compared to businesses AI currently recommends in your space.' },
+    { n: '06', t: 'Your 30-day action plan',               d: 'A prioritized list of what to change first — so you can start working toward AI recommendations immediately.' },
   ];
   return (
     <section className="section" id="what" style={{ background: '#f3f1eb' }}>
@@ -42,10 +42,10 @@ export function WhatsCheckedSection({ onCta }) {
           <Eyebrow>Your $50 report</Eyebrow>
           <div>
             <h2 className="display" style={{ fontSize: 56, margin: '0 0 18px' }}>
-              What your GEO Visibility Report <em>checks</em>
+              What the report <em>teaches you</em>
             </h2>
             <p className="lede" style={{ fontSize: 19, maxWidth: '58ch' }}>
-              Everadam reviews your website from an AI-search visibility perspective and identifies the most important areas that may affect how clearly your company is understood by AI-driven systems.
+              Six things you'll know after reading it — that you can act on immediately to start appearing in AI answers for your category.
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ export function WhatsCheckedSection({ onCta }) {
         </Reveal>
 
         <div style={{ marginTop: 48, display: 'flex', justifyContent: 'flex-start' }}>
-          <button className="btn accent" onClick={onCta}>Reveal My AI Blind Spots <Arrow/></button>
+          <button className="btn accent" onClick={onCta}>Show Me How to Get Mentioned <Arrow/></button>
         </div>
       </div>
     </section>
@@ -81,15 +81,15 @@ export function SolutionSection({ onCta }) {
           <Eyebrow>The Everadam system</Eyebrow>
           <div>
             <h2 className="display" style={{ fontSize: 56, margin: '0 0 24px' }}>
-              From $50 GEO report to <em>automated setup</em>.
+              Learn what it takes. <em>Then let us do it.</em>
             </h2>
             <p className="lede" style={{ fontSize: 19, maxWidth: '58ch', marginBottom: 14 }}>
-              The report shows exactly where your website is weak for AI-driven discovery — then Everadam can fix it.
+              The $50 report gives you the full playbook for getting recommended by ChatGPT and Claude. You can act on it yourself — or let Everadam implement it for you.
             </p>
             <p className="body" style={{ fontSize: 16.5, maxWidth: '58ch', marginBottom: 32 }}>
-              After the report, Everadam can set up your GEO foundation and run automated monthly optimization — without customer meetings, sales calls, or manual agency onboarding.
+              After the report, Everadam can set up your AI-appearance foundation and run automated monthly optimization — no meetings, no agency onboarding, no long-term contracts.
             </p>
-            <button className="btn" onClick={onCta}>Reveal My AI Blind Spots <Arrow/></button>
+            <button className="btn" onClick={onCta}>Show Me How to Get Mentioned <Arrow/></button>
           </div>
         </Reveal>
       </div>
@@ -224,7 +224,7 @@ export function TrustSection() {
         <div style={{ textAlign: 'center', maxWidth: 760, margin: '0 auto 48px' }}>
           <Eyebrow>Built for low-friction execution</Eyebrow>
           <h2 className="display" style={{ fontSize: 48, margin: '14px 0 0' }}>
-            $50 report first. <em>Automated setup after.</em>
+            Learn how to get mentioned. <em>Then let us handle it.</em>
           </h2>
         </div>
 
@@ -246,9 +246,9 @@ export function TrustSection() {
 
 export function FAQSection() {
   const faqs = [
-    { q: 'What is the GEO Visibility Report?',         a: 'A full AI-search audit of your website. It shows exactly where ChatGPT, Claude, and other AI tools fail to understand or recommend your business — and gives you a prioritized fix list.' },
-    { q: 'Why $50 and not free?',                      a: 'A real report takes real work. At $50 you get a thorough, actionable analysis — not a generic checklist. It covers your specific gaps, your competitors, and what to fix first.' },
-    { q: 'What happens after I receive the report?',   a: 'You get a plain-English document with your findings and a fix list. No upsell call, no pressure. If you want Everadam to implement the fixes, that option exists — but you can also act on the report yourself.' },
+    { q: 'What exactly is in the report?',              a: 'A practical playbook for getting your business recommended by ChatGPT, Claude, and similar AI tools. It covers what AI systems look for when recommending businesses in your category, what your competitors do that makes AI mention them, and a prioritized action list for your website.' },
+    { q: 'Why $50 and not free?',                      a: 'A real report takes real work. At $50 you get a thorough, specific analysis — not a generic checklist. It covers your exact situation, your competitors, and what to change first to start appearing in AI answers.' },
+    { q: 'What happens after I receive the report?',   a: 'You get a plain-English playbook you can act on yourself immediately. No upsell call, no pressure. If you want Everadam to implement everything for you, that option exists — but the report is fully actionable on its own.' },
     { q: 'Do I need to book a meeting?',               a: 'No. The funnel is designed to work without a customer meeting. You submit your website, receive the report, and can activate setup online.' },
     { q: 'What does the paid GEO setup include?',      a: 'Automated GEO setup, AI-search readiness review, first optimization actions, structured data recommendations, content improvement actions, and monthly visibility updates.' },
     { q: 'How much does the report cost?',              a: 'The GEO Visibility Report is $50 — one-time, no subscription. You receive the full report within 48 hours after payment.' },
@@ -289,13 +289,13 @@ export function FinalCTA({ onCta }) {
       <Reveal as="div" className="shell" style={{ textAlign: 'center' }}>
         <div className="eyebrow" style={{ color: '#8a857a' }}><span className="dot"/>Free GEO Visibility Report</div>
         <h2 className="display" style={{ fontSize: 88, margin: '18px auto 24px', maxWidth: '18ch', color: '#fafaf7' }}>
-          Stop being invisible to <em style={{ color: '#c84e22' }}>AI search</em>.
+          Start appearing when clients <em style={{ color: '#c84e22' }}>ask AI for you</em>.
         </h2>
         <p className="lede" style={{ fontSize: 20, color: '#bdb9ad', maxWidth: '60ch', margin: '0 auto 36px' }}>
           Submit your website and see where your company may need stronger signals for AI-driven search. After your report, you can let Everadam set up and optimize GEO automatically.
         </p>
         <button className="btn accent" style={{ height: 60, padding: '0 32px', fontSize: 16 }} onClick={onCta}>
-          Reveal My AI Blind Spots <Arrow/>
+          Show Me How to Get Mentioned <Arrow/>
         </button>
         <div className="mono" style={{ marginTop: 18, fontSize: 11, letterSpacing: '0.16em', color: '#8a857a', textTransform: 'uppercase' }}>
           No meeting required · Free report first · Paid setup available after

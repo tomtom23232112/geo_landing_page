@@ -64,12 +64,12 @@ export default function Activation({ data, onPaid, onBack }) {
         <Eyebrow dot={false}>Includes</Eyebrow>
         <ul style={{ listStyle: 'none', padding: 0, margin: '14px 0 0', display: 'grid', gap: 10, fontSize: 14, color: 'var(--ink-2)' }}>
           {[
-            'Full AI-search visibility audit',
-            'Where ChatGPT & Claude ignore your business',
-            'Competitor gap analysis',
-            'Prioritized fix list (what to do first)',
-            'Structured data recommendations',
-            'Plain-English explanations — no jargon',
+            'What ChatGPT & Claude look for in your category',
+            'Why your competitors get recommended — and you don\'t',
+            'Exact content structure AI needs to cite your business',
+            'Schema markup recommendations',
+            'Your readiness score vs. category benchmark',
+            'Your 30-day action plan — plain English, no jargon',
             'No meeting, no upsell call',
           ].map(t => (
             <li key={t} style={{ display: 'flex', gap: 10, alignItems: 'baseline' }}>
