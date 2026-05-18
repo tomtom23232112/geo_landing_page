@@ -32,7 +32,7 @@ export default function Hero({ tweaks, onStart }) {
       position: 'relative', overflow: 'hidden',
     }}>
       <div className="shell">
-        <Eyebrow>AI Appearance Report · $20 · For US companies</Eyebrow>
+        <Eyebrow>$20 written report · delivered to your inbox within 48h · one-time, no subscription</Eyebrow>
 
         <div className="hero-grid" style={{
           display: 'grid',

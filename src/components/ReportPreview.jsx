@@ -147,13 +147,21 @@ export default function ReportPreview({ data, onActivate }) {
         </div>
       </div>
 
+      {/* Bridge */}
+      <div style={{ marginTop: 36, padding: '18px 22px', background: '#1a1a1a', borderLeft: '3px solid var(--accent)' }}>
+        <span style={{ color: '#e8e3d6', fontSize: 15, lineHeight: 1.6 }}>
+          The full report unlocks all {issues.length} findings with plain-English explanations, your competitor breakdown, and a prioritized 30-day action plan —{' '}
+          <strong style={{ color: '#fff' }}>delivered as a PDF to your inbox within 48 hours. $20, one-time, no subscription.</strong>
+        </span>
+      </div>
+
       {/* 1-click checkout */}
-      <div style={{ marginTop: 48, padding: '36px 32px', background: 'var(--card)', border: '1px solid var(--rule)' }}>
+      <div style={{ marginTop: 16, padding: '36px 32px', background: 'var(--card)', border: '1px solid var(--rule)' }}>
         <div style={{ textAlign: 'center', maxWidth: 540, margin: '0 auto' }}>
           <Eyebrow>Get the full report</Eyebrow>
           <h4 className="display" style={{ fontSize: 30, marginTop: 10, marginBottom: 10 }}>Your AI appearance playbook — $20.</h4>
           <div className="body" style={{ fontSize: 14.5, color: 'var(--ink-2)', marginBottom: 20 }}>
-            What ChatGPT looks for in your niche, why competitors get mentioned, and your step-by-step action plan. Delivered within 48 hours.
+            A PDF report emailed to you within 48 hours. What ChatGPT looks for in your niche, why competitors get mentioned, and your exact 30-day action plan.
           </div>
 
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 10, marginBottom: 4 }}>
