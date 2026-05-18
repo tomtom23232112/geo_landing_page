@@ -282,12 +282,12 @@ export function TrustSection() {
 
 export function FAQSection() {
   const faqs = [
-    { q: 'What is the free GEO Visibility Report?',    a: 'A practical review of your website from an AI-search visibility perspective. It identifies unclear signals, content gaps, structured data opportunities, and areas where your company may be harder for AI-driven systems to understand.' },
-    { q: 'Is the report really free?',                 a: 'Yes. The GEO Visibility Report is free. If you want Everadam to set up GEO and start the automated optimization workflow afterward, you can activate the paid setup after the report.' },
-    { q: 'What happens after I receive the report?',   a: 'You can review the findings and decide whether to activate GEO setup. If you activate, Everadam starts the automated GEO workflow and sends monthly visibility updates.' },
+    { q: 'What is the GEO Visibility Report?',         a: 'A full AI-search audit of your website. It shows exactly where ChatGPT, Claude, and other AI tools fail to understand or recommend your business — and gives you a prioritized fix list.' },
+    { q: 'Why $50 and not free?',                      a: 'A real report takes real work. At $50 you get a thorough, actionable analysis — not a generic checklist. It covers your specific gaps, your competitors, and what to fix first.' },
+    { q: 'What happens after I receive the report?',   a: 'You get a plain-English document with your findings and a fix list. No upsell call, no pressure. If you want Everadam to implement the fixes, that option exists — but you can also act on the report yourself.' },
     { q: 'Do I need to book a meeting?',               a: 'No. The funnel is designed to work without a customer meeting. You submit your website, receive the report, and can activate setup online.' },
     { q: 'What does the paid GEO setup include?',      a: 'Automated GEO setup, AI-search readiness review, first optimization actions, structured data recommendations, content improvement actions, and monthly visibility updates.' },
-    { q: 'How much is the paid setup?',                a: 'After the report, you can activate your first month for $100. Ongoing automated GEO optimization is $150/month and can be canceled anytime.' },
+    { q: 'How much does the report cost?',              a: 'The GEO Visibility Report is $50 — one-time, no subscription. You receive the full report within 48 hours after payment.' },
     { q: 'Can you guarantee AI mentions or rankings?', a: 'No. No provider can honestly guarantee AI mentions, rankings, or revenue outcomes. Everadam focuses on structured, consistent optimization designed to improve your AI-search visibility foundation.' },
     { q: 'Is this suitable for US companies?',         a: 'Yes. Everadam is based in Wyoming, USA, and the service is designed for US and international B2B companies.' },
   ];

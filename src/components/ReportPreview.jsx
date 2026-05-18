@@ -17,7 +17,6 @@ export default function ReportPreview({ data, onActivate }) {
   const report = useMemo(() => buildReport(data.domain), [data.domain]);
   const { issues, score, highCount, totalCount } = report;
   const [animScore, setAnimScore] = useState(0);
-  const [annual, setAnnual] = useState(true);
   const countdown = useCountdown(15 * 60);
 
   useEffect(() => {
@@ -52,7 +51,7 @@ export default function ReportPreview({ data, onActivate }) {
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
           <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.18em', color: 'var(--accent)', textTransform: 'uppercase' }}>● Session reserved</span>
           <span style={{ fontSize: 13.5, color: '#e8e3d6' }}>
-            Your custom entity graph is cached. Activate within the window to lock in the <strong style={{ color: '#fff' }}>$100 priority setup</strong> — after that, standard rates ($150/mo) apply.
+            Your scan data is cached. Get the full report within the window for <strong style={{ color: '#fff' }}>$50</strong> — includes your complete fix list and AI-search gap analysis.
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -69,7 +68,7 @@ export default function ReportPreview({ data, onActivate }) {
         Here's what AI sees on <em>{dom}</em>
       </h3>
       <div className="body" style={{ fontSize: 14, color: 'var(--ink-3)', maxWidth: '58ch', marginBottom: 28 }}>
-        A quick preview of your free report. The full version, with plain-English explanations and what to fix first, will be emailed to <span style={{ color: 'var(--ink)' }}>{data.email || 'you'}</span>.
+        This is a preview. The full $50 report — with plain-English explanations, your complete fix list, and what to do first — will be delivered to <span style={{ color: 'var(--ink)' }}>{data.email || 'you'}</span> within 48 hours.
       </div>
 
       {/* Score + benchmark */}
@@ -155,19 +154,18 @@ export default function ReportPreview({ data, onActivate }) {
       {/* 1-click checkout */}
       <div style={{ marginTop: 48, padding: '36px 32px', background: 'var(--card)', border: '1px solid var(--rule)' }}>
         <div style={{ textAlign: 'center', maxWidth: 540, margin: '0 auto' }}>
-          <Eyebrow>Lock in priority setup</Eyebrow>
-          <h4 className="display" style={{ fontSize: 30, marginTop: 10, marginBottom: 10 }}>Activate in one tap.</h4>
+          <Eyebrow>Get the full report</Eyebrow>
+          <h4 className="display" style={{ fontSize: 30, marginTop: 10, marginBottom: 10 }}>Your complete GEO fix list — $50.</h4>
           <div className="body" style={{ fontSize: 14.5, color: 'var(--ink-2)', marginBottom: 20 }}>
-            We fix everything above. No meeting, no extra forms — your details are already on file.
+            Every gap, every missed signal, exactly what to fix and in what order. Delivered within 48 hours — no meeting, no fluff.
           </div>
 
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 10, marginBottom: 4 }}>
-            <span className="price-display" style={{ fontSize: 56 }}>$100</span>
-            <span style={{ fontSize: 18, color: 'var(--ink-3)', textDecoration: 'line-through' }}>$150</span>
-            <span className="mono" style={{ fontSize: 11, letterSpacing: '0.12em', color: 'var(--ink-3)', textTransform: 'uppercase' }}>first month</span>
+            <span className="price-display" style={{ fontSize: 56 }}>$50</span>
+            <span className="mono" style={{ fontSize: 11, letterSpacing: '0.12em', color: 'var(--ink-3)', textTransform: 'uppercase' }}>one-time</span>
           </div>
           <div className="mono" style={{ fontSize: 11, letterSpacing: '0.14em', color: 'var(--ink-3)', textTransform: 'uppercase', marginBottom: 24 }}>
-            Then $150/mo · cancel anytime · session expires in {countdown.label}
+            No subscription · no meeting · session expires in {countdown.label}
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 12 }}>
@@ -197,31 +195,15 @@ export default function ReportPreview({ data, onActivate }) {
           </div>
 
           <button className="btn accent" style={{ width: '100%', height: 54 }} onClick={onActivate}>
-            Pay with card — $100 <Arrow/>
+            Pay with card — $50 <Arrow/>
           </button>
-
-          <label style={{
-            display: 'flex', alignItems: 'flex-start', gap: 12, marginTop: 18,
-            padding: '14px 16px', border: '1px solid var(--rule)', background: 'var(--bg)',
-            cursor: 'pointer', textAlign: 'left',
-          }}>
-            <input
-              type="checkbox" checked={annual} onChange={e => setAnnual(e.target.checked)}
-              style={{ marginTop: 3, accentColor: 'var(--accent)', width: 16, height: 16, flexShrink: 0 }}
-            />
-            <span style={{ fontSize: 13.5, color: 'var(--ink-2)', lineHeight: 1.5 }}>
-              <strong style={{ color: 'var(--ink)' }}>Lock in priority indexing.</strong>{' '}
-              Upgrade to annual billing after month 1 to save 15% and maintain unbroken AI signal coverage.{' '}
-              <span style={{ color: 'var(--ink-3)' }}>Cancel before month 2 if not satisfied.</span>
-            </span>
-          </label>
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 18, color: 'var(--ink-3)', fontSize: 13, lineHeight: 1.5, maxWidth: '46ch', marginLeft: 'auto', marginRight: 'auto' }}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0, marginTop: 1 }} aria-hidden="true">
               <rect x="4" y="11" width="16" height="10" rx="1"/>
               <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
             </svg>
-            <span>Secure checkout via Stripe. Cancel your subscription anytime with one click — no email or call required.</span>
+            <span>Secure one-time payment via Stripe. No subscription, no hidden fees.</span>
           </div>
         </div>
       </div>

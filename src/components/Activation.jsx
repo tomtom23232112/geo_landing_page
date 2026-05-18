@@ -45,32 +45,32 @@ export default function Activation({ data, onPaid, onBack }) {
 
       <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
         <h3 className="display" style={{ fontSize: 42, marginBottom: 10 }}>
-          Activate GEO setup for <em>{cleanDomain(data.domain)}</em>
+          Your GEO Report for <em>{cleanDomain(data.domain)}</em>
         </h3>
         <div className="body" style={{ fontSize: 15, color: 'var(--ink-2)', maxWidth: '56ch', margin: '0 auto 40px' }}>
-          Review your order below. You'll complete payment securely on Stripe — it takes about 30 seconds.
+          One-time payment of $50. Your full report is delivered within 48 hours — no meeting, no subscription.
         </div>
       </div>
 
       <div className="card" style={{ padding: '32px 36px', maxWidth: 560, margin: '0 auto' }}>
         <Eyebrow>Order summary</Eyebrow>
         <div style={{ marginTop: 18, display: 'grid', gap: 12 }}>
-          <SummaryRow label="GEO setup + first month" value="$100.00"/>
+          <SummaryRow label="GEO Visibility Report" value="$50.00"/>
           <Hairline/>
-          <SummaryRow label="Then $150 / month" value="Recurring" muted/>
-          <SummaryRow label="Cancel anytime" value="No commitment" muted/>
+          <SummaryRow label="Delivery" value="Within 48h" muted/>
+          <SummaryRow label="Subscription" value="None" muted/>
         </div>
         <div className="dotted"/>
         <Eyebrow dot={false}>Includes</Eyebrow>
         <ul style={{ listStyle: 'none', padding: 0, margin: '14px 0 0', display: 'grid', gap: 10, fontSize: 14, color: 'var(--ink-2)' }}>
           {[
-            'Automated GEO setup',
-            'AI-search readiness review',
-            'First optimization cycle',
-            'Entity & brand signal improvements',
+            'Full AI-search visibility audit',
+            'Where ChatGPT & Claude ignore your business',
+            'Competitor gap analysis',
+            'Prioritized fix list (what to do first)',
             'Structured data recommendations',
-            'Monthly visibility update',
-            'No sales call or meeting',
+            'Plain-English explanations — no jargon',
+            'No meeting, no upsell call',
           ].map(t => (
             <li key={t} style={{ display: 'flex', gap: 10, alignItems: 'baseline' }}>
               <span style={{ color: 'var(--accent)', fontFamily: 'var(--mono)', fontSize: 11, marginTop: 2 }}>✓</span>
@@ -80,16 +80,16 @@ export default function Activation({ data, onPaid, onBack }) {
         </ul>
         <div style={{ marginTop: 24, padding: '14px 16px', background: 'var(--bg)', border: '1px solid var(--rule)', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
           <span className="mono" style={{ fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>Due today</span>
-          <span className="price-display" style={{ fontSize: 30 }}>$100.00</span>
+          <span className="price-display" style={{ fontSize: 30 }}>$50.00</span>
         </div>
       </div>
 
       <div style={{ maxWidth: 560, margin: '24px auto 0' }}>
         <button className="btn accent" style={{ width: '100%', height: 60, fontSize: 16 }} onClick={goToStripe} disabled={redirecting}>
-          {redirecting ? 'Redirecting to Stripe…' : 'Continue to secure checkout'} {!redirecting && <Arrow/>}
+          {redirecting ? 'Redirecting to Stripe…' : 'Pay $50 — Get My Report'} {!redirecting && <Arrow/>}
         </button>
         <div className="mono" style={{ fontSize: 11, letterSpacing: '0.08em', color: 'var(--ink-3)', textAlign: 'center', marginTop: 14 }}>
-          Payment securely processed by Stripe · Card · Apple Pay · Google Pay
+          One-time payment · Stripe · Card · Apple Pay · Google Pay · No subscription
         </div>
       </div>
     </div>

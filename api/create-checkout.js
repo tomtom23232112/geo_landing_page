@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
 
-const PRICE_MONTHLY  = 'price_1TV7KxIoWOs00xaiUFJP4frU'; // $150 / month (recurring)
-const PRICE_SETUP    = 'price_1TV7IfIoWOs00xaiT2apNQv3'; // $100 one-time setup fee
+// TODO: Replace with your $50 one-time price ID from Stripe Dashboard
+const PRICE_REPORT = 'price_REPLACE_WITH_YOUR_50_PRICE_ID'; // $50 one-time report
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -16,12 +16,10 @@ export default async function handler(req, res) {
 
   try {
     const session = await stripe.checkout.sessions.create({
-      mode: 'subscription',
+      mode: 'payment',
       customer_email: email,
-      line_items: [{ price: PRICE_MONTHLY, quantity: 1 }],
-      subscription_data: {
-        trial_period_days: 30,           // first $150 charge after 30 days
-        add_invoice_items: [{ price: PRICE_SETUP }], // $100 charged today
+      line_items: [{ price: PRICE_REPORT, quantity: 1 }],
+      payment_intent_data: {
         metadata: { domain: domain ?? '' },
       },
       allow_promotion_codes: false,

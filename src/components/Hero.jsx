@@ -5,9 +5,9 @@ import HeroPreview from './HeroPreview';
 import { isValidUrl, isValidEmail } from '../utils';
 
 const HEADLINES = {
-  primary: { pre: 'Get your free', em: 'GEO Visibility', post: ' Report.' },
+  primary: { pre: 'Stop losing clients to', em: 'AI search', post: ' invisibility.' },
   question: { pre: 'Can AI', em: 'understand', post: ' your company?' },
-  outcome: { pre: 'See where AI search', em: 'loses sight', post: ' of your business.' },
+  outcome: { pre: 'Your competitors show up in AI.', em: 'You don\'t.', post: '' },
 };
 
 export default function Hero({ tweaks, onStart }) {
@@ -32,7 +32,7 @@ export default function Hero({ tweaks, onStart }) {
       position: 'relative', overflow: 'hidden',
     }}>
       <div className="shell">
-        <Eyebrow>Free GEO Visibility Report · Wyoming, USA</Eyebrow>
+        <Eyebrow>GEO Visibility Report · $50 · Wyoming, USA</Eyebrow>
 
         <div className="hero-grid" style={{
           display: 'grid',
@@ -50,7 +50,7 @@ export default function Hero({ tweaks, onStart }) {
               style={{ fontSize: tweaks.density === 'compact' ? 76 : 92, margin: '0 0 24px', maxWidth: '14ch' }}
             />
             <p className="lede" style={{ fontSize: tweaks.density === 'compact' ? 19 : 22, maxWidth: '56ch', marginBottom: 36 }}>
-              See how prepared your website is for AI-driven search. Everadam reviews your site for visibility gaps, unclear signals, content opportunities, and AI-search readiness — then shows you what to improve first.
+              Every week without AI visibility costs you clients your competitors are winning. For $50, Everadam delivers a full GEO report — exactly where you're invisible to ChatGPT and Claude, and what to fix first.
             </p>
 
             <div className="card" style={{ padding: 24, background: 'var(--card)' }}>
@@ -89,17 +89,17 @@ export default function Hero({ tweaks, onStart }) {
                   No meeting required. Takes less than 2 minutes.
                 </div>
                 <button className="btn accent" onClick={submit} style={{ background: accent, borderColor: accent }}>
-                  Start My Free Report <Arrow/>
+                  Get My $50 Report <Arrow/>
                 </button>
               </div>
             </div>
 
             <ul style={{ listStyle: 'none', padding: 0, margin: '32px 0 0', display: 'grid', gap: 10, fontSize: 14.5, color: 'var(--ink-2)' }}>
               {[
-                'See where your company may be unclear for AI search',
-                'Identify missing GEO signals and content gaps',
-                'Get a practical AI-search readiness snapshot',
-                'Activate automated GEO setup after your report',
+                'See exactly where ChatGPT & Claude ignore your business',
+                'Know which competitors are winning AI mentions — and why',
+                'Get a prioritized fix list, not a generic checklist',
+                'Delivered within 48 hours — no meeting, no fluff',
               ].map(t => (
                 <li key={t} style={{ display: 'flex', gap: 12, alignItems: 'baseline' }}>
                   <span className="mono" style={{ color: accent, fontSize: 11, letterSpacing: '0.1em' }}>──</span>
@@ -110,7 +110,7 @@ export default function Hero({ tweaks, onStart }) {
 
             {tweaks.showPricingHint && (
               <div className="mono" style={{ marginTop: 24, fontSize: 11.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--ink-3)' }}>
-                Activation after report · $100 first month · then $150/mo · cancel anytime
+                One-time report · $50 · delivered within 48h · no subscription
               </div>
             )}
           </div>
