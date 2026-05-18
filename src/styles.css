@@ -697,3 +697,39 @@ body {
   border-top: 1px dotted var(--rule-strong);
   margin: 24px 0;
 }
+
+/* ── Mobile fixes ────────────────────────────────── */
+@media (max-width: 900px) {
+  /* Section header rows: inline gridTemplateColumns override */
+  .row-2 { grid-template-columns: 1fr !important; }
+
+  /* Reduce large display headings */
+  .display { font-size: clamp(32px, 6vw, 56px) !important; }
+
+  /* Dark section row-4 → 1 column */
+  .row-4 { grid-template-columns: 1fr !important; }
+
+  /* Fix trust cards to 2 columns */
+  .row[style*="repeat(5"] { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Reduce section gap on narrow screens */
+  .row { gap: 0 !important; }
+
+  /* FAQ heading size */
+  .faq-q { font-size: 17px; }
+}
+
+@media (max-width: 600px) {
+  /* Single column everything */
+  .row-2, .row-3, .row-4 { grid-template-columns: 1fr !important; }
+
+  /* Hero card inputs stack */
+  .row.row-2[style] { grid-template-columns: 1fr !important; }
+
+  /* Smallest display size */
+  .display { font-size: clamp(28px, 8vw, 40px) !important; }
+
+  /* Section padding tighter */
+  .section { padding: 48px 0; }
+  .section-tight { padding: 40px 0; }
+}
