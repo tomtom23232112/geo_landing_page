@@ -89,7 +89,7 @@ export default function Hero({ tweaks, onStart }) {
                   No meeting required. Takes less than 2 minutes.
                 </div>
                 <button className="btn accent" onClick={submit} style={{ background: accent, borderColor: accent }}>
-                  Get My $50 Report <Arrow/>
+                  Show Me Where I'm Invisible <Arrow/>
                 </button>
               </div>
             </div>

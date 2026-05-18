@@ -66,7 +66,7 @@ export function WhatsCheckedSection({ onCta }) {
         </Reveal>
 
         <div style={{ marginTop: 48, display: 'flex', justifyContent: 'flex-start' }}>
-          <button className="btn accent" onClick={onCta}>Get My Free GEO Report <Arrow/></button>
+          <button className="btn accent" onClick={onCta}>Reveal My AI Blind Spots <Arrow/></button>
         </div>
       </div>
     </section>
@@ -89,7 +89,7 @@ export function SolutionSection({ onCta }) {
             <p className="body" style={{ fontSize: 16.5, maxWidth: '58ch', marginBottom: 32 }}>
               After the report, Everadam can set up your GEO foundation and run automated monthly optimization — without customer meetings, sales calls, or manual agency onboarding.
             </p>
-            <button className="btn" onClick={onCta}>Get My Free GEO Report <Arrow/></button>
+            <button className="btn" onClick={onCta}>Reveal My AI Blind Spots <Arrow/></button>
           </div>
         </Reveal>
       </div>
@@ -331,7 +331,7 @@ export function FinalCTA({ onCta }) {
           Submit your website and see where your company may need stronger signals for AI-driven search. After your report, you can let Everadam set up and optimize GEO automatically.
         </p>
         <button className="btn accent" style={{ height: 60, padding: '0 32px', fontSize: 16 }} onClick={onCta}>
-          Get My Free GEO Report <Arrow/>
+          Reveal My AI Blind Spots <Arrow/>
         </button>
         <div className="mono" style={{ marginTop: 18, fontSize: 11, letterSpacing: '0.16em', color: '#8a857a', textTransform: 'uppercase' }}>
           No meeting required · Free report first · Paid setup available after

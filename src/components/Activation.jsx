@@ -86,7 +86,7 @@ export default function Activation({ data, onPaid, onBack }) {
 
       <div style={{ maxWidth: 560, margin: '24px auto 0' }}>
         <button className="btn accent" style={{ width: '100%', height: 60, fontSize: 16 }} onClick={goToStripe} disabled={redirecting}>
-          {redirecting ? 'Redirecting to Stripe…' : 'Pay $50 — Get My Report'} {!redirecting && <Arrow/>}
+          {redirecting ? 'Redirecting to Stripe…' : 'Send Me My Report'} {!redirecting && <Arrow/>}
         </button>
         <div className="mono" style={{ fontSize: 11, letterSpacing: '0.08em', color: 'var(--ink-3)', textAlign: 'center', marginTop: 14 }}>
           One-time payment · Stripe · Card · Apple Pay · Google Pay · No subscription

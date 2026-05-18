@@ -195,7 +195,7 @@ export default function ReportPreview({ data, onActivate }) {
           </div>
 
           <button className="btn accent" style={{ width: '100%', height: 54 }} onClick={onActivate}>
-            Pay with card — $50 <Arrow/>
+            Get My Full Report <Arrow/>
           </button>
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 18, color: 'var(--ink-3)', fontSize: 13, lineHeight: 1.5, maxWidth: '46ch', marginLeft: 'auto', marginRight: 'auto' }}>
