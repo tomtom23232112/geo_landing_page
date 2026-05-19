@@ -1,7 +1,6 @@
 import Stripe from 'stripe';
 
-// TODO: Replace with your $20 one-time price ID from Stripe Dashboard
-const PRICE_REPORT = 'price_REPLACE_WITH_YOUR_50_PRICE_ID'; // $20 one-time report
+const PRICE_REPORT = 'price_1TYi4kIoWOs00xai3751jLuZ'; // $20 one-time report
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -9,7 +8,7 @@ export default async function handler(req, res) {
     return res.status(405).end('Method Not Allowed');
   }
 
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2024-12-18.acacia' });
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2026-04-22.dahlia' });
   const { email, domain } = req.body ?? {};
 
   if (!email) return res.status(400).json({ error: 'email required' });

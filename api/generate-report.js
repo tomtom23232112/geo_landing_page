@@ -12,6 +12,7 @@
  */
 
 import Anthropic from '@anthropic-ai/sdk';
+import puppeteer from 'puppeteer';
 import { buildSystemPrompt, buildReportPrompt } from './report-prompt.js';
 
 export default async function handler(req, res) {
@@ -41,7 +42,7 @@ export async function generateReport(domain, email, niche) {
 
   const message = await anthropic.messages.create({
     model: 'claude-opus-4-7',
-    max_tokens: 4096,
+    max_tokens: 8000,
     system: buildSystemPrompt(),
     messages: [{ role: 'user', content: prompt }],
   });
@@ -53,7 +54,7 @@ async function scrapeDomain(domain) {
   const base = domain.startsWith('http') ? domain : `https://${domain}`;
   const result = {};
 
-  // --- robots.txt ---
+  // --- robots.txt + llms.txt via fetch (static files, no JS needed) ---
   try {
     const r = await fetch(`${base}/robots.txt`, { signal: AbortSignal.timeout(5000) });
     result.robotsTxt = r.ok ? await r.text() : null;
@@ -61,7 +62,6 @@ async function scrapeDomain(domain) {
     result.robotsTxt = null;
   }
 
-  // --- llms.txt ---
   try {
     const r = await fetch(`${base}/llms.txt`, { signal: AbortSignal.timeout(4000) });
     result.hasLlmsTxt = r.ok;
@@ -69,20 +69,32 @@ async function scrapeDomain(domain) {
     result.hasLlmsTxt = false;
   }
 
-  // --- homepage HTML ---
+  // --- homepage via Puppeteer — renders JS (React, Next.js, Vue etc.) ---
   let html = '';
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+  });
+
   try {
+    const page = await browser.newPage();
+    await page.setUserAgent('Mozilla/5.0 (compatible; GEO-Scanner/1.0)');
+
     const start = Date.now();
-    const r = await fetch(base, {
-      signal: AbortSignal.timeout(8000),
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GEO-Scanner/1.0)' },
-    });
+    const response = await page.goto(base, { waitUntil: 'networkidle2', timeout: 15000 });
     const elapsed = Date.now() - start;
-    result.pageLoadNote = elapsed > 3000 ? `Slow — ${elapsed}ms (Perplexity may abort crawl)` : `${elapsed}ms — acceptable`;
-    html = r.ok ? await r.text() : '';
+
+    result.pageLoadNote = elapsed > 3000
+      ? `Slow — ${elapsed}ms (Perplexity may abort crawl)`
+      : `${elapsed}ms — acceptable`;
+
+    if (response && response.ok()) {
+      html = await page.content(); // fully rendered HTML incl. JS output
+    }
   } catch (e) {
     result.pageLoadNote = 'Timeout or connection refused';
-    html = '';
+  } finally {
+    await browser.close();
   }
 
   if (html) {
@@ -98,8 +110,6 @@ async function scrapeDomain(domain) {
     result.avgParagraphLength = estimateAvgParagraphLength(html);
   }
 
-  // --- external presence (simple heuristics via search would require paid APIs;
-  //     we check the homepage for links as a proxy) ---
   result.hasLinkedIn = html.includes('linkedin.com');
   result.hasGoogleBusiness = html.includes('g.page') || html.includes('maps.google') || html.includes('goo.gl/maps');
   result.hasWikidata = html.includes('wikidata.org');

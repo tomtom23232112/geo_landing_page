@@ -166,6 +166,43 @@ Brief table or list showing readiness for:
 
 For each: one sentence on current status + one sentence on biggest lever.
 
+## Bing Webmaster Tools — The Step Nobody Takes
+
+This is the single highest-leverage action for ChatGPT visibility that almost no one does.
+
+ChatGPT Search uses the Bing index. If your site is not verified and submitted in Bing Webmaster Tools, ChatGPT is working with stale, incomplete data about you — or none at all.
+
+Write this as a numbered step-by-step guide (4-6 steps), specific enough that a non-technical business owner can do it in 20 minutes:
+1. How to access Bing Webmaster Tools (bing.com/webmasters)
+2. How to verify the site (XML file or meta tag — recommend meta tag as easier)
+3. How to submit the sitemap
+4. How to use the URL Inspection tool to force-index key pages
+5. What to check after 48 hours
+
+End with: "Google Search Console does nothing for ChatGPT. This is its equivalent."
+
+## Ready-to-Use Code Snippets
+
+Generate 3 exact, copy-paste-ready code blocks based on the scan data for ${domain}:
+
+### 1. robots.txt fix
+Show the exact lines to ADD to their existing robots.txt to allow all major AI crawlers. Format as a code block. Include: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended.
+
+### 2. llms.txt starter template
+Generate a complete, ready-to-use llms.txt file for ${domain} based on what we know from the scan (niche, homepage content, location if detectable). The business owner should be able to publish this as-is with minimal editing. Format as a code block. Include: business name, what they do, who they serve, why they're trustworthy, main services, location, contact.
+
+### 3. LocalBusiness schema snippet
+Generate a complete JSON-LD LocalBusiness schema block for ${domain} based on scan data. Fill in what we know; use [PLACEHOLDER] for what we don't. Format as a code block ready to paste into the <head>.
+
+## 5 FAQ Questions to Write This Week
+
+Based on the niche and homepage content of ${domain}, write 5 specific FAQ questions that:
+- Match what real customers type into ChatGPT/Perplexity
+- AI systems are likely to answer with a citation
+- Cover the most common purchase-decision questions in this niche
+
+For each question, write the first sentence of the ideal answer (so they know the tone and direction).
+
 ## Your 30-Day Action Plan
 
 Week 1 — Foundation (do these first, highest impact per hour):
@@ -180,9 +217,40 @@ Week 3 — External Presence (where to get listed):
 Week 4 — Momentum (what to do consistently going forward):
 [2-3 ongoing habits]
 
+## Where AI Systems Actually Find Your Competitors
+
+This is the section most reports skip. ChatGPT uses Bing as its search index. Claude uses Brave Search. Perplexity crawls in real-time. Each platform has a known set of high-authority domains it cites most often.
+
+List the 8-12 most important platforms for THIS specific business niche in a table:
+
+| Platform | URL to register | Why AI cites it | Priority |
+|---|---|---|---|
+[Fill in platforms specific to the niche. Always include: Google Business Profile, LinkedIn, Bing Places. Then add niche-specific ones. Examples by niche:
+- Agencies/consultants: Clutch.co, G2, UpCity, Expertise.com, GoodFirms
+- Local services: Yelp, Angi, Houzz, Thumbtack, BBB
+- Healthcare: Healthgrades, Zocdoc, WebMD directory, Doximity
+- Legal: Avvo, Martindale, FindLaw, Justia
+- SaaS/Tech: G2, Capterra, Product Hunt, AlternativeTo
+- Finance: NerdWallet listings, Investopedia directory
+- E-commerce/retail: Google Shopping, Yelp
+- Restaurants/food: Yelp, TripAdvisor, OpenTable, Zomato
+- Real estate: Zillow, Realtor.com, Trulia
+- Any business: Wikipedia (if notable), Wikidata, Reddit (relevant subreddits), YouTube channel
+Always include: Bing Places for Business (mandatory for ChatGPT), Trustpilot or similar review platform]
+
+After the table, add 2-3 sentences on the Reddit strategy: which subreddits are relevant, and that answering questions there (not promoting) is one of the fastest ways to get Perplexity citations since Reddit accounts for 46.7% of Perplexity's top citations.
+
 ## What Competitors Who Appear in AI Answers Do Differently
 
 [3-4 sentences specific to the ${niche || 'business'} niche — what the businesses that get recommended have in common, based on GEO research patterns for this type of business.]
+
+## What Happens When You Implement This
+
+Write 3-4 sentences that are honest but motivating. Include:
+- Specific timeframes per platform (Perplexity: 2-4 weeks, ChatGPT: 6-12 weeks, Google AI Overviews: 4-8 weeks)
+- The compounding effect — each fix makes the next one more effective
+- One concrete outcome statement specific to the ${niche || 'business'} niche: what does it look like when a potential client searches for their service and this business appears?
+- End with: "None of these changes require an agency or developer. The robots.txt fix takes 5 minutes. The schema takes 30 minutes. The Bing Webmaster Tools setup takes 20 minutes. Start there."
 
 ## Score Calculation
 
