@@ -19,6 +19,7 @@ export default async function handler(req, res) {
       mode: 'payment',
       customer_email: email,
       line_items: [{ price: PRICE_REPORT, quantity: 1 }],
+      metadata: { domain: domain ?? '' },
       payment_intent_data: {
         metadata: { domain: domain ?? '' },
       },
