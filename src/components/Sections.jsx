@@ -14,10 +14,10 @@ export function ProblemSection() {
               AI is recommending businesses right now. <em>Probably not yours.</em>
             </h2>
             <p className="lede dropcap" style={{ fontSize: 20, maxWidth: '58ch' }}>
-              When your potential clients ask ChatGPT, Claude, or Perplexity for a recommendation — those tools pick specific businesses to mention. The decision happens in seconds, based on signals your website either has or doesn't.
+              25% of all Google searches now show an AI answer before any website link. ChatGPT, Claude, and Perplexity pick specific businesses to mention — the decision is based on signals your website either has or doesn't.
             </p>
             <p className="body" style={{ fontSize: 17, marginTop: 18, maxWidth: '58ch' }}>
-              The $20 report shows you exactly what those signals are, which ones you're missing, and what to do to become the business AI recommends in your category.
+              A Princeton study (ACM KDD 2024) found that one content change — adding cited sources — increased AI visibility by 115%. The $20 report shows you exactly which signals you're missing and what to fix first.
             </p>
           </div>
         </Reveal>
@@ -182,9 +182,9 @@ function SocialProof() {
         display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0,
       }}>
         {[
-          { icon: '↗', t: 'AI search is growing fast', d: '40% of US adults already use AI assistants for product and service research. That number is doubling year over year.' },
-          { icon: '⊘', t: 'Most websites are invisible to AI', d: 'The majority of business websites lack the structured signals AI systems need to understand, categorize, and recommend them.' },
-          { icon: '◎', t: 'Early movers win the category', d: 'Companies that establish AI-search visibility now will be the default recommendation as AI-assisted search becomes the norm.' },
+          { icon: '↗', t: '25% of Google searches now show an AI answer', d: 'Conductor tracked 21.9 million queries and found 1 in 4 now triggers an AI Overview — a number that doubled since March 2025. Brands cited in those answers receive 35% higher organic CTR and 91% higher paid CTR. (Seer Interactive, Nov 2025)' },
+          { icon: '⊘', t: '79% of websites accidentally block AI crawlers', d: 'BuzzStream found that most sites use a catch-all robots.txt rule that blocks every AI bot — including ChatGPT Search and PerplexityBot. If your site is one of them, AI cannot index it, regardless of how good your content is.' },
+          { icon: '◎', t: '+115% visibility from one content change', d: 'A Princeton/Georgia Tech study (ACM KDD 2024) tested 9 optimization strategies across 10,000 queries. Adding cited sources increased AI visibility by 115% for lower-ranked pages. Keyword stuffing performed 10% worse than doing nothing.' },
         ].map((c, i) => (
           <div key={c.t} style={{ padding: '28px 28px 32px', borderRight: i < 2 ? '1px solid var(--rule)' : '0' }}>
             <div className="mono" style={{ fontSize: 20, color: 'var(--accent)', marginBottom: 14 }}>{c.icon}</div>
@@ -246,14 +246,14 @@ export function TrustSection() {
 
 export function FAQSection() {
   const faqs = [
-    { q: 'What exactly is in the report?',              a: 'A practical playbook for getting your business recommended by ChatGPT, Claude, and similar AI tools. It covers what AI systems look for when recommending businesses in your category, what your competitors do that makes AI mention them, and a prioritized action list for your website.' },
-    { q: 'Why $20 and not free?',                      a: 'A real report takes real work. At $20 you get a thorough, specific analysis — not a generic checklist. It covers your exact situation, your competitors, and what to change first to start appearing in AI answers.' },
-    { q: 'What happens after I receive the report?',   a: 'You get a plain-English playbook you can act on yourself immediately. No upsell call, no pressure. If you want Everadam to implement everything for you, that option exists — but the report is fully actionable on its own.' },
-    { q: 'Do I need to book a meeting?',               a: 'No. The funnel is designed to work without a customer meeting. You submit your website, receive the report, and can activate setup online.' },
-    { q: 'What does the paid GEO setup include?',      a: 'Automated GEO setup, AI-search readiness review, first optimization actions, structured data recommendations, content improvement actions, and monthly visibility updates.' },
-    { q: 'How much does the report cost?',              a: 'The GEO Visibility Report is $20 — one-time, no subscription. You receive the full report within 48 hours after payment.' },
-    { q: 'Can you guarantee AI mentions or rankings?', a: 'No. No provider can honestly guarantee AI mentions, rankings, or revenue outcomes. Everadam focuses on structured, consistent optimization designed to improve your AI-search visibility foundation.' },
-    { q: 'Is this suitable for US companies?',         a: 'Yes. Everadam is a US-based operation and the service is designed for US and international B2B companies.' },
+    { q: 'What exactly is in the report?',              a: 'A personalized AI-readiness audit for your specific website and niche. It covers: which AI crawlers are blocked on your site (79% of websites have this problem without knowing), what schema markup is missing, how your content is structured compared to what AI systems actually cite, which external platforms you should be listed on, and a prioritized 30-day action plan. Delivered as a PDF within 48 hours.' },
+    { q: 'Why $20 and not free?',                      a: 'Free checklists are generic. This report is built specifically for your domain — it scans your actual website, benchmarks you against what businesses AI currently recommends in your category, and tells you exactly what to fix first. The $20 covers the analysis. If the first action item gets you one new client, the report paid for itself 50 times over.' },
+    { q: 'How long until I see results?',               a: 'It depends on the platform. Perplexity indexes new content within 24–72 hours — fixes there can show results within a week. ChatGPT Search and Google AI Overviews respond within 2–4 weeks. The underlying training data of models like GPT and Claude updates every 6–18 months. The report tells you which quick wins to prioritize first.' },
+    { q: 'Do I need to book a meeting?',               a: 'No. Enter your website and email, pay $20, receive the report. No call, no intake form, no agency onboarding. If you want Everadam to implement the fixes for you after reading the report, that option exists — but it\'s never required.' },
+    { q: 'What does the paid GEO setup include?',      a: 'Automated GEO setup based on your report findings: robots.txt corrections, schema markup implementation, content restructuring for AI extraction, external citation setup (LinkedIn, Wikidata, Google Business Profile, relevant directories), and monthly visibility updates.' },
+    { q: 'How much does the report cost?',              a: '$20 — one-time, no subscription. You receive the full PDF report within 48 hours. If you want Everadam to implement the recommendations for you, pricing for that is discussed after the report.' },
+    { q: 'Can you guarantee AI mentions or rankings?', a: 'No — and any provider who does is lying. AI citation patterns shift 40–60% month to month (Semrush, 13-week study). What we can do is give you the structural foundation that makes AI more likely to find and cite your business. The Princeton/Georgia Tech research shows specific content changes increase AI visibility by 41–115%. That\'s what the report is built on.' },
+    { q: 'Is this suitable for non-US companies?',     a: 'Yes. The GEO signals that matter — robots.txt, schema markup, content structure, external citations — are platform-wide and apply globally. Everadam has worked with businesses across Europe and the US.' },
   ];
   const [open, setOpen] = useState(0);
 
@@ -287,7 +287,7 @@ export function FinalCTA({ onCta }) {
     <section className="section" style={{ background: 'var(--ink)', color: 'var(--bg)', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 'auto 0 0 0', height: 1, background: 'linear-gradient(90deg, transparent, rgba(200,78,34,0.6), transparent)', animation: 'accentSweep 4s ease-in-out infinite' }}/>
       <Reveal as="div" className="shell" style={{ textAlign: 'center' }}>
-        <div className="eyebrow" style={{ color: '#8a857a' }}><span className="dot"/>Free GEO Visibility Report</div>
+        <div className="eyebrow" style={{ color: '#8a857a' }}><span className="dot"/>$20 Report · Delivered Within 48h</div>
         <h2 className="display" style={{ fontSize: 88, margin: '18px auto 24px', maxWidth: '18ch', color: '#fafaf7' }}>
           Start appearing when clients <em style={{ color: '#c84e22' }}>ask AI for you</em>.
         </h2>
@@ -298,7 +298,7 @@ export function FinalCTA({ onCta }) {
           Show Me How to Get Mentioned <Arrow/>
         </button>
         <div className="mono" style={{ marginTop: 18, fontSize: 11, letterSpacing: '0.16em', color: '#8a857a', textTransform: 'uppercase' }}>
-          No meeting required · Free report first · Paid setup available after
+          No meeting required · $20 one-time · Delivered within 48h
         </div>
       </Reveal>
     </section>
