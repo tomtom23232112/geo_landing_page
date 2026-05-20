@@ -5,8 +5,6 @@ import { fileURLToPath } from 'url';
 import checkoutHandler from './api/create-checkout.js';
 import webhookHandler from './api/stripe-webhook.js';
 import generateHandler from './api/generate-report.js';
-import { generatePdf } from './api/pdf.js';
-import { sendReportEmail } from './api/email.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -20,20 +18,6 @@ app.use(express.json());
 
 app.post('/api/create-checkout', checkoutHandler);
 app.post('/api/generate-report', generateHandler);
-
-// TEMP — remove after test
-app.post('/api/test-pipeline', async (req, res) => {
-  const { domain, email } = req.body ?? {};
-  if (!domain || !email) return res.status(400).json({ error: 'domain and email required' });
-  try {
-    const md = `# GEO Report: ${domain}\n\n## Score: 55/100\n\nTest paragraph with **bold** and a table:\n\n| Platform | Status |\n|---|---|\n| ChatGPT | Partial |\n| Claude | Not indexed |\n\nCode block:\n\`\`\`\nUser-agent: GPTBot\nDisallow:\n\`\`\`\n`;
-    const pdfBuffer = await generatePdf(md, domain);
-    await sendReportEmail(email, domain, pdfBuffer);
-    res.json({ ok: true, pdfKB: Math.round(pdfBuffer.length / 1024) });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
 
 app.use(express.static(path.join(__dirname, 'docs')));
 
