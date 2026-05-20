@@ -19,7 +19,7 @@ export async function sendReportEmail(email, domain, pdfBuffer) {
     attachments: [
       {
         filename,
-        content: pdfBuffer,
+        content: pdfBuffer.toString('base64'),
       },
     ],
   });
