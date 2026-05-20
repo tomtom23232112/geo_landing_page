@@ -24,7 +24,7 @@ export async function generatePdf(markdown, domain) {
       printBackground: true,
       margin: { top: '20mm', right: '20mm', bottom: '20mm', left: '20mm' },
     });
-    return pdf;
+    return Buffer.from(pdf);
   } finally {
     await browser.close();
   }
