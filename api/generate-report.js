@@ -69,32 +69,47 @@ async function scrapeDomain(domain) {
     result.hasLlmsTxt = false;
   }
 
-  // --- homepage via Puppeteer — renders JS (React, Next.js, Vue etc.) ---
+  // --- homepage via Puppeteer (JS-rendered) mit fetch()-Fallback ---
   let html = '';
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-  });
+  let usedPuppeteer = false;
 
   try {
-    const page = await browser.newPage();
-    await page.setUserAgent('Mozilla/5.0 (compatible; GEO-Scanner/1.0)');
+    const browser = await puppeteer.launch({
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+    });
+    usedPuppeteer = true;
 
-    const start = Date.now();
-    const response = await page.goto(base, { waitUntil: 'networkidle2', timeout: 15000 });
-    const elapsed = Date.now() - start;
-
-    result.pageLoadNote = elapsed > 3000
-      ? `Slow — ${elapsed}ms (Perplexity may abort crawl)`
-      : `${elapsed}ms — acceptable`;
-
-    if (response && response.ok()) {
-      html = await page.content(); // fully rendered HTML incl. JS output
+    try {
+      const page = await browser.newPage();
+      await page.setUserAgent('Mozilla/5.0 (compatible; GEO-Scanner/1.0)');
+      const start = Date.now();
+      const response = await page.goto(base, { waitUntil: 'networkidle2', timeout: 15000 });
+      const elapsed = Date.now() - start;
+      result.pageLoadNote = elapsed > 3000
+        ? `Slow — ${elapsed}ms (Perplexity may abort crawl)`
+        : `${elapsed}ms — acceptable`;
+      if (response && response.ok()) html = await page.content();
+    } finally {
+      await browser.close();
     }
   } catch (e) {
-    result.pageLoadNote = 'Timeout or connection refused';
-  } finally {
-    await browser.close();
+    // Puppeteer nicht verfügbar — fetch() als Fallback
+    try {
+      const start = Date.now();
+      const r = await fetch(base, {
+        signal: AbortSignal.timeout(10000),
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GEO-Scanner/1.0)' },
+      });
+      const elapsed = Date.now() - start;
+      result.pageLoadNote = elapsed > 3000
+        ? `Slow — ${elapsed}ms (Perplexity may abort crawl)`
+        : `${elapsed}ms — acceptable`;
+      html = r.ok ? await r.text() : '';
+    } catch {
+      result.pageLoadNote = 'Timeout or connection refused';
+    }
   }
 
   if (html) {
