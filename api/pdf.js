@@ -396,6 +396,42 @@ function buildHtmlTemplate(body, domain) {
     justify-content: space-between;
   }
 
+  /* ── Mid-report banner ── */
+  .cta-mid {
+    background: #111;
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    page-break-inside: avoid;
+  }
+  .cta-mid-text strong {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+  .cta-mid-text span {
+    color: #999;
+    font-size: 11px;
+  }
+  .cta-mid a {
+    background: #c84e22;
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   /* ── Page breaks ── */
   h3 { page-break-after: avoid; }
 </style>
@@ -510,6 +546,25 @@ document.querySelectorAll('h3').forEach(function(h3) {
   const cls = { HIGH: 'badge-high', MEDIUM: 'badge-medium', LOW: 'badge-low' }[m[2].toUpperCase()];
   h3.innerHTML = m[1].trim() + ' <span class="badge ' + cls + '">' + m[2] + '</span>';
 });
+
+// ── Mid-report banner before Platform Breakdown ──
+(function() {
+  const allH2 = document.querySelectorAll('h2');
+  for (const h2 of allH2) {
+    if (!h2.textContent.toLowerCase().includes('platform')) continue;
+    const banner = document.createElement('div');
+    banner.className = 'cta-mid';
+    banner.innerHTML = \`
+      <div class="cta-mid-text">
+        <strong>Halfway through the report — still planning to do this alone?</strong>
+        <span>Everadam implements everything: schema, Bing, directories, llms.txt — done in 2 weeks.</span>
+      </div>
+      <a href="https://everadam.com">Let us handle it &rarr;</a>
+    \`;
+    h2.parentNode.insertBefore(banner, h2);
+    break;
+  }
+})();
 
 // ── Code block labels ──
 document.querySelectorAll('pre').forEach(function(pre) {
