@@ -22,7 +22,7 @@ export async function generatePdf(markdown, domain) {
     const pdf = await page.pdf({
       format: 'A4',
       printBackground: true,
-      margin: { top: '20mm', right: '20mm', bottom: '20mm', left: '20mm' },
+      margin: { top: '18mm', right: '18mm', bottom: '18mm', left: '18mm' },
     });
     return Buffer.from(pdf);
   } finally {
@@ -41,270 +41,491 @@ function buildHtmlTemplate(body, domain) {
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Georgia', serif;
-    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12.5px;
     line-height: 1.65;
     color: #1a1a1a;
     background: #fff;
   }
 
-  /* Header */
+  /* ── Header ── */
   .report-header {
-    border-bottom: 2px solid #c84e22;
-    padding-bottom: 20px;
-    margin-bottom: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  .report-header .brand {
-    font-family: 'Arial', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #c84e22;
-    font-weight: 700;
-  }
-  .report-header .meta {
-    font-family: 'Arial', sans-serif;
-    font-size: 10px;
-    color: #888;
-    letter-spacing: 0.08em;
-    text-align: right;
-  }
-
-  /* Headings */
-  h1 {
-    font-family: 'Georgia', serif;
-    font-size: 26px;
-    font-weight: normal;
-    line-height: 1.25;
-    color: #111;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #e8e3d6;
-    padding-bottom: 12px;
-  }
-
-  h2 {
-    font-family: 'Arial', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #c84e22;
-    margin: 28px 0 10px;
-    padding-top: 8px;
-    border-top: 1px solid #e8e3d6;
-  }
-
-  h3 {
-    font-family: 'Georgia', serif;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: italic;
-    color: #111;
-    margin: 20px 0 8px;
-  }
-
-  /* Body text */
-  p {
-    margin-bottom: 10px;
-    color: #2a2a2a;
-  }
-
-  strong { color: #111; }
-
-  em { color: #444; }
-
-  /* Lists */
-  ul, ol {
-    margin: 8px 0 12px 20px;
-    color: #2a2a2a;
-  }
-  li { margin-bottom: 5px; }
-
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 14px 0;
-    font-family: 'Arial', sans-serif;
-    font-size: 11.5px;
-  }
-  th {
-    background: #1a1a1a;
-    color: #fff;
-    text-align: left;
-    padding: 8px 10px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-  }
-  td {
-    padding: 7px 10px;
-    border-bottom: 1px solid #e8e3d6;
-    vertical-align: top;
-  }
-  tr:nth-child(even) td { background: #fafaf7; }
-
-  /* Score block — auto-detects the score heading */
-  h2:first-of-type {
-    font-size: 18px;
-    letter-spacing: 0;
-    text-transform: none;
-    border-top: none;
-    padding-top: 0;
-    color: #111;
-  }
-
-  /* Callout boxes (blockquotes) */
-  blockquote {
-    border-left: 3px solid #c84e22;
-    margin: 14px 0;
-    padding: 10px 16px;
-    background: #fafaf7;
-    font-style: italic;
-    color: #333;
-  }
-
-  /* Code */
-  code {
-    font-family: 'Courier New', monospace;
-    font-size: 11px;
-    background: #f3f0eb;
-    padding: 1px 4px;
-    border-radius: 2px;
-    color: #c84e22;
-  }
-
-  /* Footer */
-  .report-footer {
-    margin-top: 40px;
-    padding-top: 14px;
-    border-top: 1px solid #e8e3d6;
-    font-family: 'Arial', sans-serif;
-    font-size: 10px;
-    color: #aaa;
-    letter-spacing: 0.08em;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* Page break hints */
-  h2 { page-break-before: auto; }
-  h3 { page-break-after: avoid; }
-  table { page-break-inside: avoid; }
-
-  /* CTA boxes */
-  .cta-strip {
     background: #111;
-    color: #fff;
-    border-radius: 6px;
-    padding: 14px 20px;
-    margin: 24px 0 32px;
+    padding: 18px 24px;
+    margin-bottom: 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Arial', sans-serif;
+    border-radius: 6px;
   }
-  .cta-strip p { margin: 0; font-size: 12.5px; color: #ccc; line-height: 1.4; }
-  .cta-strip p strong { color: #fff; font-size: 13.5px; }
+  .report-header .brand {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c84e22;
+  }
+  .report-header .meta {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.06em;
+    text-align: right;
+  }
+
+  /* ── Headings ── */
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #c84e22;
+    margin: 32px 0 12px;
+    padding-left: 10px;
+    border-left: 3px solid #c84e22;
+    line-height: 1.4;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    margin: 22px 0 8px;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #444;
+    margin: 14px 0 6px;
+  }
+
+  /* ── Body text ── */
+  p { margin-bottom: 9px; color: #2a2a2a; line-height: 1.65; }
+  strong { color: #111; }
+  em { color: #555; font-style: italic; }
+
+  ul, ol { margin: 6px 0 12px 20px; color: #2a2a2a; }
+  li { margin-bottom: 4px; }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 18px;
+    font-size: 11px;
+    page-break-inside: avoid;
+  }
+  th {
+    background: #111;
+    color: #fff;
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #ece9e3;
+    vertical-align: top;
+    color: #333;
+  }
+  tr:nth-child(even) td { background: #fafaf7; }
+
+  /* ── Blockquotes ── */
+  blockquote {
+    border-left: 3px solid #c84e22;
+    margin: 12px 0;
+    padding: 10px 14px;
+    background: #fafaf7;
+    color: #444;
+  }
+
+  /* ── Code blocks ── */
+  pre {
+    background: #1a1a1a;
+    border-radius: 6px;
+    margin: 10px 0 16px;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  pre .code-label {
+    background: #2a2a2a;
+    color: #c84e22;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    display: block;
+    border-bottom: 1px solid #333;
+  }
+  pre code {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 10.5px;
+    color: #e8e8e8;
+    background: transparent;
+    padding: 12px 14px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+  }
+  /* inline code */
+  p code, li code {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    background: #f3f0eb;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #c84e22;
+  }
+
+  /* ── Score box (injected by JS) ── */
+  .score-box {
+    background: #fafaf7;
+    border: 1px solid #e8e3d6;
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin: 16px 0 24px;
+    page-break-inside: avoid;
+  }
+  .score-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .score-number {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .score-denom {
+    font-size: 20px;
+    color: #999;
+    font-weight: 400;
+  }
+  .score-label {
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+  .score-bar-wrap {
+    background: #e8e3d6;
+    border-radius: 4px;
+    height: 7px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .score-bar-avg {
+    position: absolute;
+    top: -3px;
+    height: 13px;
+    width: 2px;
+    background: #111;
+    border-radius: 1px;
+  }
+  .score-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5px;
+    color: #999;
+    margin-top: 3px;
+  }
+  .score-bar-labels .avg-label { color: #555; font-weight: 600; }
+
+  /* ── Impact badges (injected by JS) ── */
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .badge-high   { background: #fee2e2; color: #dc2626; }
+  .badge-medium { background: #fff7ed; color: #c84e22; }
+  .badge-low    { background: #f3f4f6; color: #6b7280; }
+
+  /* ── CTA strip (top) ── */
+  .cta-strip {
+    background: #111;
+    border-radius: 6px;
+    padding: 16px 22px;
+    margin: 4px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    page-break-inside: avoid;
+  }
+  .cta-strip-left p { margin: 0; font-size: 12px; color: #ccc; line-height: 1.5; }
+  .cta-strip-left p strong { color: #fff; display: block; margin-bottom: 2px; font-size: 13px; }
+  .cta-strip-left ul {
+    margin: 6px 0 0 16px;
+    color: #aaa;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .cta-strip-left ul li { margin-bottom: 1px; }
   .cta-strip a {
     background: #c84e22;
     color: #fff;
     text-decoration: none;
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 9px 16px;
+    padding: 11px 18px;
     border-radius: 4px;
     white-space: nowrap;
-    margin-left: 20px;
     flex-shrink: 0;
   }
 
+  /* ── CTA full (bottom) ── */
   .cta-full {
     background: #111;
-    color: #fff;
     border-radius: 8px;
-    padding: 32px 28px;
-    margin: 40px 0 28px;
-    font-family: 'Arial', sans-serif;
+    padding: 0;
+    margin: 44px 0 28px;
     page-break-inside: avoid;
+    overflow: hidden;
+    display: flex;
   }
-  .cta-full .label {
-    font-size: 10px;
+  .cta-full-left {
+    padding: 30px 28px;
+    flex: 1;
+  }
+  .cta-full-right {
+    background: #1d1d1d;
+    border-left: 1px solid #2a2a2a;
+    padding: 30px 24px;
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cta-label {
+    font-size: 9.5px;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #c84e22;
     margin-bottom: 10px;
   }
-  .cta-full h2 {
-    font-family: 'Georgia', serif;
-    font-size: 22px;
-    font-weight: normal;
+  .cta-full-left h2 {
+    font-size: 19px;
+    font-weight: 700;
     color: #fff;
-    margin: 0 0 14px;
+    margin: 0 0 12px;
     line-height: 1.3;
     border: none;
     padding: 0;
     text-transform: none;
     letter-spacing: 0;
   }
-  .cta-full p { font-size: 13px; color: #bbb; line-height: 1.6; margin: 0 0 10px; }
-  .cta-full ul { margin: 12px 0 20px 18px; color: #bbb; font-size: 13px; line-height: 1.7; }
-  .cta-full ul li { margin-bottom: 4px; }
-  .cta-full a {
+  .cta-full-left p { font-size: 12px; color: #bbb; line-height: 1.6; margin: 0 0 10px; }
+  .cta-full-left ul { margin: 8px 0 18px 16px; color: #bbb; font-size: 12px; line-height: 1.75; }
+  .cta-full-left ul li { margin-bottom: 2px; }
+  .cta-full-left a {
     display: inline-block;
     background: #c84e22;
     color: #fff;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 12px 24px;
+    padding: 11px 20px;
     border-radius: 4px;
-    margin-top: 6px;
   }
+  .cta-right-item {
+    margin-bottom: 14px;
+  }
+  .cta-right-item:last-child { margin-bottom: 0; }
+  .cta-right-item .check {
+    color: #c84e22;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .cta-right-item .check-label {
+    font-size: 11px;
+    color: #ddd;
+    line-height: 1.4;
+  }
+  .cta-right-item .check-sub {
+    font-size: 9.5px;
+    color: #888;
+  }
+
+  /* ── Footer ── */
+  .report-footer {
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid #ece9e3;
+    font-size: 9.5px;
+    color: #bbb;
+    letter-spacing: 0.06em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ── Page breaks ── */
+  h3 { page-break-after: avoid; }
 </style>
 </head>
 <body>
 
 <div class="report-header">
-  <div class="brand">Everadam · GEO Readiness Report</div>
-  <div class="meta">${domain}<br>${date}</div>
+  <div class="brand">Everadam &nbsp;·&nbsp; GEO Readiness Report</div>
+  <div class="meta">${domain}&nbsp;&nbsp;·&nbsp;&nbsp;${date}</div>
 </div>
 
-<!-- Strip CTA — appears right after score section -->
+<!-- Strip CTA -->
 <div class="cta-strip">
-  <p><strong>Don't want to do this yourself?</strong><br>Everadam implements the full GEO setup for you — schema, llms.txt, Bing, directories.</p>
-  <a href="https://everadam.com">everadam.com</a>
+  <div class="cta-strip-left">
+    <p><strong>Don't want to do this yourself?</strong>Everadam implements the full GEO setup for you.</p>
+    <ul>
+      <li>Schema · llms.txt · robots.txt · Bing setup</li>
+      <li>Google Business Profile + 8+ directories</li>
+      <li>First AI citations typically within 3–4 weeks</li>
+    </ul>
+  </div>
+  <a href="https://everadam.com">everadam.com &rarr;</a>
 </div>
 
 ${body}
 
-<!-- Full CTA at end -->
+<!-- Full CTA -->
 <div class="cta-full">
-  <div class="label">Done-for-you · Everadam</div>
-  <h2>We'll implement everything in this report for you.</h2>
-  <p>You now know exactly what's missing. The question is: do you want to spend the next 4 weeks doing it yourself, or let us handle it while you focus on your business?</p>
-  <ul>
-    <li>Schema markup (Organization, LocalBusiness, FAQPage)</li>
-    <li>robots.txt + llms.txt — published and verified</li>
-    <li>Bing Webmaster Tools setup + sitemap submission</li>
-    <li>Google Business Profile + 8+ directory registrations</li>
-    <li>Content restructuring for AI extraction</li>
-  </ul>
-  <p>Most clients see first AI citations within 3-4 weeks of implementation.</p>
-  <a href="https://everadam.com">Get started at everadam.com</a>
+  <div class="cta-full-left">
+    <div class="cta-label">Done-for-you &nbsp;·&nbsp; Everadam</div>
+    <h2>We'll implement everything in this report for you.</h2>
+    <p>You now know exactly what's missing. Do you want to spend the next 4 weeks on this — or let us handle it?</p>
+    <ul>
+      <li>Schema markup (Organization, LocalBusiness, FAQPage)</li>
+      <li>robots.txt + llms.txt published &amp; verified</li>
+      <li>Bing Webmaster Tools + sitemap submission</li>
+      <li>Google Business Profile + 8+ directory registrations</li>
+      <li>Content restructured for AI extraction</li>
+    </ul>
+    <a href="https://everadam.com">Get started at everadam.com &rarr;</a>
+  </div>
+  <div class="cta-full-right">
+    <div class="cta-right-item">
+      <div class="check">&#10003;</div>
+      <div class="check-label">Bing &amp; ChatGPT</div>
+      <div class="check-sub">Webmaster Tools setup</div>
+    </div>
+    <div class="cta-right-item">
+      <div class="check">&#10003;</div>
+      <div class="check-label">Schema markup</div>
+      <div class="check-sub">Organization · FAQ · LocalBusiness</div>
+    </div>
+    <div class="cta-right-item">
+      <div class="check">&#10003;</div>
+      <div class="check-label">8+ directories</div>
+      <div class="check-sub">Clutch · GBP · LinkedIn · more</div>
+    </div>
+    <div class="cta-right-item">
+      <div class="check">&#10003;</div>
+      <div class="check-label">3–4 week results</div>
+      <div class="check-sub">First AI citations</div>
+    </div>
+  </div>
 </div>
 
 <div class="report-footer">
-  <span>Everadam — everadam.com</span>
-  <span>Confidential · prepared for ${domain}</span>
+  <span>Everadam &mdash; everadam.com</span>
+  <span>Confidential &nbsp;·&nbsp; prepared for ${domain}</span>
 </div>
+
+<script>
+// ── Score box ──
+(function() {
+  const allH2 = document.querySelectorAll('h2');
+  for (const h2 of allH2) {
+    if (!h2.textContent.includes('AI Readiness Score')) continue;
+    const m = h2.textContent.match(/(\\d+)\\/100/);
+    if (!m) break;
+    const score = parseInt(m[1]);
+    const color = score <= 40 ? '#dc2626' : score <= 65 ? '#c84e22' : '#16a34a';
+    const verdict = score <= 25 ? 'Critical — major gaps across all areas'
+                  : score <= 40 ? 'Below average — significant work needed'
+                  : score <= 60 ? 'Moderate — fixable within 30 days'
+                  : score <= 75 ? 'Above average — fine-tuning needed'
+                  : 'Strong — maintain and expand';
+    const avgPos = 61;
+    h2.outerHTML = \`<div class="score-box">
+      <div class="score-row">
+        <span class="score-number" style="color:\${color}">\${score}</span>
+        <span class="score-denom">/100</span>
+      </div>
+      <div class="score-label">\${verdict}</div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-fill" style="width:\${score}%;background:\${color}"></div>
+        <div class="score-bar-avg" style="left:\${avgPos}%"></div>
+      </div>
+      <div class="score-bar-labels">
+        <span>0</span>
+        <span class="avg-label">&#9650; Industry avg: 61</span>
+        <span>100</span>
+      </div>
+    </div>\`;
+    break;
+  }
+})();
+
+// ── Impact badges ──
+document.querySelectorAll('h3').forEach(function(h3) {
+  const t = h3.textContent;
+  const m = t.match(/^(.*?)\\s+[\\u2014\\-]{1,3}\\s+(HIGH|MEDIUM|LOW)\\s+Impact$/i);
+  if (!m) return;
+  const cls = { HIGH: 'badge-high', MEDIUM: 'badge-medium', LOW: 'badge-low' }[m[2].toUpperCase()];
+  h3.innerHTML = m[1].trim() + ' <span class="badge ' + cls + '">' + m[2] + '</span>';
+});
+
+// ── Code block labels ──
+document.querySelectorAll('pre').forEach(function(pre) {
+  const code = pre.querySelector('code');
+  if (!code) return;
+  const txt = code.textContent.trim();
+  let label = 'CODE';
+  if (txt.startsWith('User-agent') || txt.includes('GPTBot')) label = 'robots.txt';
+  else if (txt.startsWith('#') && (txt.includes('What we do') || txt.includes('llms') || txt.includes('who we serve') || txt.toLowerCase().includes('## what'))) label = 'llms.txt';
+  else if (txt.includes('"@context"') || txt.includes('@type') || txt.includes('application/ld')) label = 'JSON-LD Schema';
+  const labelEl = document.createElement('span');
+  labelEl.className = 'code-label';
+  labelEl.textContent = label;
+  pre.insertBefore(labelEl, code);
+});
+</script>
 
 </body>
 </html>`;
