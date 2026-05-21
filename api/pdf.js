@@ -193,6 +193,81 @@ function buildHtmlTemplate(body, domain) {
   h2 { page-break-before: auto; }
   h3 { page-break-after: avoid; }
   table { page-break-inside: avoid; }
+
+  /* CTA boxes */
+  .cta-strip {
+    background: #111;
+    color: #fff;
+    border-radius: 6px;
+    padding: 14px 20px;
+    margin: 24px 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  .cta-strip p { margin: 0; font-size: 12.5px; color: #ccc; line-height: 1.4; }
+  .cta-strip p strong { color: #fff; font-size: 13.5px; }
+  .cta-strip a {
+    background: #c84e22;
+    color: #fff;
+    text-decoration: none;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 9px 16px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-left: 20px;
+    flex-shrink: 0;
+  }
+
+  .cta-full {
+    background: #111;
+    color: #fff;
+    border-radius: 8px;
+    padding: 32px 28px;
+    margin: 40px 0 28px;
+    font-family: 'Arial', sans-serif;
+    page-break-inside: avoid;
+  }
+  .cta-full .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c84e22;
+    margin-bottom: 10px;
+  }
+  .cta-full h2 {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    font-weight: normal;
+    color: #fff;
+    margin: 0 0 14px;
+    line-height: 1.3;
+    border: none;
+    padding: 0;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .cta-full p { font-size: 13px; color: #bbb; line-height: 1.6; margin: 0 0 10px; }
+  .cta-full ul { margin: 12px 0 20px 18px; color: #bbb; font-size: 13px; line-height: 1.7; }
+  .cta-full ul li { margin-bottom: 4px; }
+  .cta-full a {
+    display: inline-block;
+    background: #c84e22;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 4px;
+    margin-top: 6px;
+  }
 </style>
 </head>
 <body>
@@ -202,7 +277,29 @@ function buildHtmlTemplate(body, domain) {
   <div class="meta">${domain}<br>${date}</div>
 </div>
 
+<!-- Strip CTA — appears right after score section -->
+<div class="cta-strip">
+  <p><strong>Don't want to do this yourself?</strong><br>Everadam implements the full GEO setup for you — schema, llms.txt, Bing, directories.</p>
+  <a href="https://everadam.com">everadam.com</a>
+</div>
+
 ${body}
+
+<!-- Full CTA at end -->
+<div class="cta-full">
+  <div class="label">Done-for-you · Everadam</div>
+  <h2>We'll implement everything in this report for you.</h2>
+  <p>You now know exactly what's missing. The question is: do you want to spend the next 4 weeks doing it yourself, or let us handle it while you focus on your business?</p>
+  <ul>
+    <li>Schema markup (Organization, LocalBusiness, FAQPage)</li>
+    <li>robots.txt + llms.txt — published and verified</li>
+    <li>Bing Webmaster Tools setup + sitemap submission</li>
+    <li>Google Business Profile + 8+ directory registrations</li>
+    <li>Content restructuring for AI extraction</li>
+  </ul>
+  <p>Most clients see first AI citations within 3-4 weeks of implementation.</p>
+  <a href="https://everadam.com">Get started at everadam.com</a>
+</div>
 
 <div class="report-footer">
   <span>Everadam — everadam.com</span>
