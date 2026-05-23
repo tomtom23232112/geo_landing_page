@@ -20,6 +20,22 @@ app.use(express.json());
 
 app.post('/api/create-checkout', checkoutHandler);
 app.post('/api/generate-report', generateHandler);
+
+// TEMP — test only, will be removed after email send
+app.post('/api/test-pipeline', async (req, res) => {
+  const { domain, email } = req.body ?? {};
+  if (!domain || !email) return res.status(400).json({ error: 'domain and email required' });
+  try {
+    const { generateReport } = await import('./api/generate-report.js');
+    const markdown = await generateReport(domain, email);
+    const pdfBuffer = await generatePdf(markdown, domain);
+    await sendReportEmail(email, domain, pdfBuffer);
+    res.json({ ok: true, pdfKB: Math.round(pdfBuffer.length / 1024) });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.use(express.static(path.join(__dirname, 'docs')));
 
 app.use((_req, res) => {
